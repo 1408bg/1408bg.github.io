@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탈옥 타이머</title>
+  <style>
+    * {
+      margin: 0 auto;
+      padding: 0px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-use-select: none;
+      user-select: none;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      font-size: 64px;
+      color: black;
+      overflow: hidden;
+      text-shadow: 12px 12px 4px rgb(0, 0, 0);
+    }
+    .background {
+      position: absolute;
+      z-index: -1;
+      margin-top: -20px;
+      filter: brightness(40%);
+    }
+    #wrap {
+      color: rgb(255, 0, 0);
+      width: 660px;
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -85px 0 0 -330px;
+      transition: all 4s ease-out;
+    }
+    img {
+      margin-top: -4%;
+      margin-left: -15%;
+      width: 160vw;
+      z-index: 5;
+      transition: all 2s ease-in;
+    }
+    .animate {
+      transform: rotate3d(0, 1, 0, -90deg);
+      margin-left: 20%;
+    }
+  </style>
+</head>
+<body>
+  <img class="background" src="https://png.pngtree.com/thumb_back/fw800/background/20230722/pngtree-inside-a-jail-cell-illumination-from-a-barred-window-3d-rendered-image_3770436.jpg" alt="um" width="100%">
+  <div id="wrap">
+    <h3 id="title">탈옥까지 남은 시간</h3>
+    <div id="time"></div>
+  </div>
+  <img id="jall" src="https://interactive.hankookilbo.com/v/e99c1e11c1834228a394bfafe2d15d0d/images/part2/iron.png">
+  <script>
+let openned = false
+const box = document.getElementById('jall');
+function updateTime() {
+  const now = new Date();
+  let time = [0,0,0];
+  time[0] = 20 - now.getHours().toString().padStart(2, '0');
+  time[1] = 29 - now.getMinutes().toString().padStart(2, '0');
+  if (time[0] < 0){
+    end();
+    return 0;
+  }
+  if (time[1] < 0){
+    time[1] = 60+time[1];
+    time[0] = time[0]-1;
+  }
+  time[2] = 59 - now.getSeconds().toString().padStart(2, '0');
+  if ((time[0] == 0) && (time[1] == 0) && (time[2] == 0)){
+    end();
+    return 0;
+  }
+  for (i = 0; i < 3; i++){
+    if (time[i] < 10){
+      time[i] = '0'+time[i].toString();
+    }
+  }
+  const timeString = `${time[0]}:${time[1]}:${time[2]}`;
+  document.getElementById('time').textContent = timeString;
+}
+
+function end(){
+  openned = true;
+  clearInterval(times);
+  document.getElementById('time').textContent = "00:00:00";
+  document.getElementById('title').style.textShadow = '8px 8px 8px blue';
+  document.getElementById('title').innerText = '탈옥!';
+  document.getElementById('time').style.textShadow = '8px 8px 8px blue';
+}
+
+let times = setInterval(updateTime, 1000);
+updateTime();
+
+box.addEventListener('mousedown', () => {
+  box.classList.add('animate');
+  setTimeout(() => {
+    if (!openned){ box.classList.remove('animate'); }
+    else { document.getElementById('wrap').style.transform = 'scale(2.5)'; }
+  }, "500");
+});
+document.addEventListener("mouseover", () => {
+  document.getElementsByClassName('background')[0].style = "brightness(200%);";
+})
+  </script>
+</body>
+</html>
