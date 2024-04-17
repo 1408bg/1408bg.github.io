@@ -62,6 +62,10 @@
   <script>
 let openned = false
 const box = document.getElementById('jall');
+function openFullscreen(){
+  console.log("1");
+  document.documentElement.requestFullscreen();
+}
 function updateTime() {
   const now = new Date();
   let time = [0,0,0];
@@ -110,10 +114,9 @@ box.addEventListener('mousedown', () => {
     else { document.getElementById('wrap').style.transform = 'scale(2.5)'; }
   }, "500");
 });
-document.addEventListener("mouseover", () => {
-  document.getElementsByClassName('background')[0].style = "brightness(200%);";
+document.addEventListener("keydown", (k) => {
+  openFullscreen();
 })
-document.documentElement.requestFullscreen();
   </script>
 </body>
 </html>
