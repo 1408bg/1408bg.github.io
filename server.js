@@ -6,6 +6,8 @@ const timetable = new Timetable();
 const now = new Date();
 let today;
 
+consol.log("test");
+
 const test = async () => {
   await timetable.init();
 
