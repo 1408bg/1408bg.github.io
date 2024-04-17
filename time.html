@@ -67,13 +67,13 @@ function updateTime() {
   let time = [0,0,0];
   time[0] = 20 - now.getHours().toString().padStart(2, '0');
   time[1] = 29 - now.getMinutes().toString().padStart(2, '0');
-  if (time[0] < 0){
-    end();
-    return 0;
-  }
   if (time[1] < 0){
     time[1] = 60+time[1];
     time[0] = time[0]-1;
+  }
+  if (time[0] < 0){
+    end();
+    return 0;
   }
   time[2] = 59 - now.getSeconds().toString().padStart(2, '0');
   if ((time[0] == 0) && (time[1] == 0) && (time[2] == 0)){
