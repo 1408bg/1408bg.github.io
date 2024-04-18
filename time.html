@@ -63,8 +63,12 @@
 let openned = false
 const box = document.getElementById('jall');
 function openFullscreen(){
-  console.log("1");
-  document.documentElement.requestFullscreen();
+  if(document.documentElement.requestFullscreen){
+    document.documentElement.requestFullscreen();
+  }
+  else if(document.documentElement.webkitRequestFullScreen){
+    document.documentElement.webkitRequestFullScreen();
+  }
 }
 function updateTime() {
   const now = new Date();
