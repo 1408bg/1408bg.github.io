@@ -60,6 +60,7 @@
   </div>
   <img id="jall" src="https://interactive.hankookilbo.com/v/e99c1e11c1834228a394bfafe2d15d0d/images/part2/iron.png">
   <script>
+const endtime = 14;
 let openned = false
 const box = document.getElementById('jall');
 function openFullscreen(){
@@ -73,7 +74,7 @@ function openFullscreen(){
 function updateTime() {
   const now = new Date();
   let time = [0,0,0];
-  time[0] = 20 - now.getHours().toString().padStart(2, '0');
+  time[0] = endtime - now.getHours().toString().padStart(2, '0');
   time[1] = 29 - now.getMinutes().toString().padStart(2, '0');
   if (time[1] < 0){
     time[1] = 60+time[1];
