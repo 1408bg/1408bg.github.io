@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>탈옥 타이머</title>
   <style>
+    @keyframes exit {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.2);}
+      100% {transform: scale(1)}
+    }
     * {
       margin: 0 auto;
       padding: 0px;
@@ -50,9 +55,24 @@
       transform: rotate3d(0, 1, 0, -90deg);
       margin-left: 20%;
     }
+    .exit {
+      display: none;
+      font-size: 32px;
+      left: 50%;
+      margin-left: -222px;
+      position: fixed;
+      color: blue;
+      margin-top: 30vh;
+      animation-name: exit;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
   </style>
 </head>
 <body>
+  <div class="exit">
+    <h2>클릭하여 탈옥하세요!</h2>
+  </div>
   <img class="background" src="https://png.pngtree.com/thumb_back/fw800/background/20230722/pngtree-inside-a-jail-cell-illumination-from-a-barred-window-3d-rendered-image_3770436.jpg" alt="um" width="100%">
   <div id="wrap">
     <h3 id="title">탈옥까지 남은 시간</h3>
@@ -60,7 +80,9 @@
   </div>
   <img id="jall" src="https://interactive.hankookilbo.com/v/e99c1e11c1834228a394bfafe2d15d0d/images/part2/iron.png">
   <script>
+// 나가는시간
 const endtime = 14;
+// ---------
 let openned = false
 const box = document.getElementById('jall');
 function openFullscreen(){
@@ -99,6 +121,7 @@ function updateTime() {
 }
 
 function end(){
+  document.getElementsByClassName('exit')[0].style.display = 'block';
   openned = true;
   clearInterval(times);
   document.getElementById('time').textContent = "00:00:00";
@@ -116,7 +139,10 @@ box.addEventListener('mousedown', () => {
   box.classList.add('animate');
   setTimeout(() => {
     if (!openned){ box.classList.remove('animate'); }
-    else { document.getElementById('wrap').style.transform = 'scale(2.5)'; }
+    else {
+      document.getElementsByClassName('exit')[0].style.display = 'none';
+      document.getElementById('wrap').style.transform = 'scale(2.5)';
+    }
   }, "500");
 });
 document.addEventListener("click", (k) => {
