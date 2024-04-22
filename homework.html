@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info</title>
+</head>
+<body>
+  <header>
+    <h1>웹프로그래밍 기초 - 수행평가 1</h1>
+    <h2>평가 요소</h2>
+    <nav>
+      <ol>
+        <a href="#defalutInput"><li>기본 입력</li></a>
+        <a href="#formInput"><li>폼 삽입</li></a>
+        <a href="#userInput"><li>사용자 입력</li></a>
+      </ol>
+    </nav>
+  </header>
+  <section>
+    <div id="defalutInput">
+      <h1>기본 입력</h1>
+      <ul>
+        <li>
+          <h3>텍스트 입력을 위한 태그를 정확히 사용할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>헤딩</h4>
+              <ul>
+                <li>h1 - h6의 범위를 가지며 숫자가 낮을 수록 크기가 커진다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>p</h4>
+              <ul>
+                <li>매우기본적인텍스트입력태그</li>
+                <li>display: block이다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>span</h4>
+              <ul>
+                <li>display: inline이다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>pre</h4>
+              <ul>
+                <li>친거(띄어쓰기, 줄바꿈) 그대로 나온다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>강조 태그</h4>
+              <ul>
+                <li><b>strong</b>, b<br>굵어진다.</li>
+                <li><b>em</b>, i<br>기울어진다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>blockquote</h4>
+              <ul>
+                <li>인용, 자동으로 탭쳐준다.</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3>목록의 종류와 특징을 이해하고 사용할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>ol</h4>
+              <ul>
+                <li>순서 있는 리스트</li>
+                <li>type, start, reverced 속성이 있다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>ul</h4>
+              <ul>
+                <li>순서 없는 리스트</li>
+              </ul>
+            </li>
+            <li>
+              <h4>dl</h4>
+              <ul>
+                <li>제목 있는 리스트</li>
+                <li>dt로 제목, dd로 요소를 쓴다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>li</h4>
+              <ul>
+                <li>리스트 요소</li>
+                <li>dl을 제외한 모든 리스트 요소다.</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3>표를 만들기 위한 태그를 적절히 사용할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>table</h4>
+              <ul>
+                <li>이안에 테이블 집어넣는다.<br>지금부터 나오는건 다 table안에 들어간다.</li>
+                <li>border 속성으로 테두리 넣을 수 있다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>caption</h4>
+              <ul>
+                <li>표 제목이다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>tr</h4>
+              <ul>
+                <li>표의 한 줄이다.</li>
+                <li>th로 제목 셀, td로 일반 셀을 집어넣는다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>셀 확장 속성</h4>
+              <ul>
+                <li><b>colspan</b>: 열 합치기</li>
+                <li><b>rowspan</b>: 행 합치기</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3>이미지, 오디오, 비디오 등을 정확히 삽입할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>img</h4>
+              <ul>
+                <li>빈태그</li>
+                <li>src 속성으로 경로 지정</li>
+                <li>alt 속성으로 대체 텍스트 지정</li>
+                <li>width 속성으로 가로 길이 조정 (px 쓰지 말자)</li>
+              </ul>
+            </li>
+            <li>
+              <h4>audio</h4>
+              <ul>
+                <li>src 속성으로 경로 지정</li>
+                <li>태그 안에 대체 텍스트 작성</li>
+                <li>controls 속성으로 제어 인터페이스 표시</li>
+                <li>loop, muted, autoplay, preload 속성을 가짐</li>
+              </ul>
+            </li>
+            <li>
+              <h4>video</h4>
+              <ul>
+                <li>audio랑 동일</li>
+              </ul>
+            </li>
+            <li>
+              <h4>object</h4>
+              <ul>
+                <li>data 속성으로 경로 지정</li>
+                <li>width, height 속성 보유</li>
+              </ul>
+            </li>
+            <li>
+              <h4>embed</h4>
+              <ul>
+                <li>src 속성으로 경로 지정</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3>외부 사이트로 연결하는 링크를 삽입할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>a</h4>
+              <ul>
+                <li>href 속성으로 경로 지정</li>
+                <li>target="blank"로 새 창 열기</li>
+                <li>a 안에 집어넣은 태그는 다 하이퍼링크 적용 대상</li>
+              </ul>
+            </li>
+            <li>
+              <h4>절대 경로와 상대 경로</h4>
+              <ul>
+                <li><b>절대 경로</b>: /, root가 기준 (http 포함)</li>
+                <li><b>상대 경로</b>: ./(생략가능), 현재 위치가 기준<br><b>../</b> 상위 폴더 이동, <b>/</b> 하위 폴더 이동</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div id="formInput">
+      <h1>폼 삽입</h1>
+      <ul>
+        <li>
+          <h3>문제 상황에서 요구하는 폼 요소를 삽입할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>form</h4>
+              <ul>
+                <li>이 안에 폼 집어넣는다.<br>앞으로 나오는 태그는 다 이 안에 들어간다.</li>
+                <li>method로 전송 타입, action으로 라우팅 주소를 지정한다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>fieldset</h4>
+              <ul>
+                <li>form 내부 요소를 분리하는 태그</li>
+                <li>이 안에 input 집어넣는다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>legend</h4>
+              <ul>
+                <li>fieldset의 제목을 나타낸다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>label</h4>
+              <ul>
+                <li>input의 제목을 나타낸다.</li>
+                <li>이 안에 input 집어넣어도 되고<br>for 속성으로 input이랑 id 맞춰도 된다.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>input</h4>
+              <ul>
+                <li>여기에서 사용자 입력 받는다.</li>
+                <li>display: inlineblock이다.</li>
+                <li>텍스트 입력<br>type="text" : <input type="text"></li>
+                <li>확인, 초기화 (value로 안에 내용 변경)<br>submit, reset : <input type="submit"><input type="reset"></li>
+                <li>라디오, 체크박스 (name 꼭 맞추기)<br>radio, checkbox : <input type="radio"><input type="checkbox"></li>
+                <li>autofocus, placeholder, readonly, required 속성 보유</li>
+              </ul>
+            </li>
+            <li>
+              <h4>textarea</h4>
+              <ul>
+                <li>여러줄 입력받기</li>
+                <li>열 rows, 행 cols 속성 보유</li>
+              </ul>
+            </li>
+            <li>
+              <h4>select</h4>
+              <ul>
+                <li>저걸로 드롭다운 만들고</li>
+                <li>option 태그로 선택지 지정</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div id="userInput">
+      <h1>사용자 입력</h1>
+      <ul>
+        <li>
+          <h3>사용자 입력 태그의 다양한 속성과 값을 활용할 수 있는가?</h3>
+          <ol>
+            <li>
+              <h4>로그인 양식</h4>
+              <ul>
+                <li>
+                  <div>
+                    <form>
+                      <fieldset>
+                        <legend>로그인</legend>
+                        <label for="user-id">ID : </label>
+                        <input id="user-id" type="text" size="20">
+                        <br>
+                        <label for="user-password">PW : </label>
+                        <input id="user-password" type="password" size="20">
+                      </fieldset>
+                    </form>
+                  </div>
+                </li>
+                <li>
+                  <code>
+                    <pre>
+&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;로그인&lt;/legend&gt;
+    &lt;label for="user-id"&gt;ID : &lt;/label&gt;
+    &lt;input id="user-id" type="text" size="20"&gt;
+    &lt;br&gt;
+    &lt;label for="user-password"&gt;PW : &lt;/label&gt;
+    &lt;input id="user-password" type="password" size="20"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+                    </pre>
+                  </code>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
