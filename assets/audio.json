@@ -1,6 +1,6 @@
 {
   "titles" : ["Classic", "Labor Groove"]
-  "Defalult" : {
+  "Default" : {
     "min" : "1",
     "max" : "1",
     "tracks" : [
