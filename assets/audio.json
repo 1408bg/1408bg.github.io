@@ -14,7 +14,7 @@
   },
   "Classic" : {
     "min" : "1",
-    "max" : "2",
+    "max" : "3",
     "tracks" : [
       {
         "title": "Four Seasons: Summer",
@@ -27,6 +27,12 @@
         "artist" : "Frédéric Chopin (Pf. Dmitry Shishkin)",
         "img" : "https://drive.google.com/uc?export=download&id=1A51otJLLsSi3g19Koh6wWbZzES5NR5s8",
         "url" : "https://drive.google.com/uc?export=download&id=1jBspDQVtrO0AFRJk62-nGPBD9Tep3Dkg"
+      },
+      {
+        "title" : "Summer",
+        "artist" : "Joe Hisaishi",
+        "img" : "https://drive.google.com/uc?export=download&id=1RMfTSPZB5fBg1sqX3tKYkcl6y0CfdFae",
+        "url" : "https://drive.google.com/uc?export=download&id=1u5kqZoYTUTaBSAbYysy7-LaBd6CDq5jF"
       }
     ]
   },
