@@ -116,7 +116,7 @@ h1 {
     </div>
     <div class="contents">
       <div class="header">
-        <img class="icon" src="" alt="chat">
+        <img class="icon" src="/assets/dsm_chat.png" alt="chat">
         <span class="title">DSM Chat</span>
         <span class="ver">v0.2</span>
       </div>
@@ -124,32 +124,16 @@ h1 {
         <h2 class="cTitle">DSM Chat</h2>
         <p class="description">The Chatting App</p>
         <img class="imgs" src="" alt="img">
-        <a class="download" href="https://drive.google.com/uc?export=download&id=1Uou8B3by0bWHHbRhNCLHmwziNCFC1PZ4">Download Now</a>
+        <a class="download" href="https://drive.google.com/uc?export=download&id=1sGElJ5qQQ8s1bX1zz35LkLL873OdxbJ3">Download Now</a>
       </div>
     </div>
   </main>
   <script>
-let icons = [];
-let imgs = [];
-fetch("/assets/appdata.json")
-  .then((response) => response.json())
-  .then((data) => {
-    icons = (data["icons"]);
-    imgs = (data["images"]);
-  });
-
 window.addEventListener("load", ()=>{
   let contents = document.getElementsByClassName('contents');
   let headers = document.getElementsByClassName('header');
   let icon = document.getElementsByClassName('icon');
   let img = document.getElementsByClassName('imgs');
-
-  for (let i = 0; i < icon.length; i++){
-    icon[i].src = icons[i];
-    img[i].src = imgs[i];
-  }
-
-  console.log(icons);
 
   for (let i = 0; i < contents.length; i++){
     (headers[i]).addEventListener("mousedown", () => {
