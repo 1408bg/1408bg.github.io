@@ -1,10 +1,10 @@
 {
-  "icons" : {
-    "player" : "https://static.vecteezy.com/system/resources/previews/011/480/184/original/music-player-app-musical-note-icon-isolated-on-square-background-vector.jpg",
-    "dsm_chat" : ""
-  },
-  "images" : {
-    "player" : "",
-    "dsm_chat" : ""
-  }
+  "icons" : [
+    "https://static.vecteezy.com/system/resources/previews/011/480/184/original/music-player-app-musical-note-icon-isolated-on-square-background-vector.jpg",
+    ""
+  ],
+  "images" : [
+    "",
+    ""
+  ]
 }
