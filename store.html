@@ -131,7 +131,7 @@ h1 {
   <script>
 let icons = [];
 let imgs = [];
-fetch("https://1408bg.github.io/assets/appdata.json")
+fetch("/assets/appdata.json")
   .then((response) => response.json())
   .then((data) => {
     icons = (data["icons"]);
