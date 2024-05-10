@@ -31,16 +31,17 @@ h1 {
   line-height: 50px;
 }
 .contents {
-  background-color: whitesmoke;
+  background-color: rgba(224, 255, 255, 0.3);
   padding: 20px;
   height: 40px;
+  transition-duration: 0.5s;
 }
 .contents:hover {
-  background-color: rgba(224, 255, 255, 0.3);
+  background-color: whitesmoke;
   box-shadow: 1px 2px2 2px black;
 }
 .contents.selected {
-  height: 100vh !important;
+  height: 100vh;
 }
 .icon {
   float: left;
@@ -66,6 +67,7 @@ h1 {
   height: 60px;
   width: 100%;
   float: left;
+  cursor: pointer;
 }
 .main {
   background-color: whitesmoke;
@@ -83,6 +85,7 @@ h1 {
 .description {
   font-weight: 100;
   margin-bottom: 20px;
+  height: 22px;
 }
 .download {
   color: blue;
@@ -123,8 +126,8 @@ h1 {
       <div class="main">
         <h2 class="cTitle">DSM Chat</h2>
         <p class="description">The Chatting App</p>
-        <img class="imgs" src="" alt="img">
-        <a class="download" href="https://drive.google.com/file/d/1PxOmB69F10wMbjy1vYCkKwFA-ur1Eebx/view?usp=drive_link">Download Now</a>
+        <img class="imgs" src="/assets/dsm_chat_img.png" alt="img">
+        <a class="download" href="https://drive.google.com/uc?export=download&id=1PxOmB69F10wMbjy1vYCkKwFA-ur1Eebx">Download Now</a>
       </div>
     </div>
   </main>
