@@ -1,2 +1,2 @@
-# 1408bg.github.io
+# b_g@dsm.hs.kr
 ## [Nav](/nav.html)
