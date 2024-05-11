@@ -14,7 +14,7 @@
   },
   "Classic" : {
     "min" : "1",
-    "max" : "3",
+    "max" : 4",
     "tracks" : [
       {
         "title": "Four Seasons: Summer",
@@ -33,6 +33,12 @@
         "artist" : "Joe Hisaishi",
         "img" : "https://drive.google.com/uc?export=download&id=1RMfTSPZB5fBg1sqX3tKYkcl6y0CfdFae",
         "url" : "https://drive.google.com/uc?export=download&id=1u5kqZoYTUTaBSAbYysy7-LaBd6CDq5jF"
+      },
+      {
+        "title" : "24 Caprices, op. 1: No. 24",
+        "artist" : "Nicolo Paganini",
+        "img" : "https://drive.google.com/uc?export=download&id=1wi4zcVg_rP4SKEIHr7TapcvkfQG3QPrj",
+        "url" : "https://drive.google.com/uc?export=download&id=1wv5xAAuJFV7CZYqu6_nviveUaSfRVUMq"
       }
     ]
   },
