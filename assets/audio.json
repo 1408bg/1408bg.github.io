@@ -59,5 +59,17 @@
         "url": "https://drive.google.com/uc?export=download&id=1dEq2dZNbSlYgNRtjiJPn_IxjtbLl5aYH"
       }
     ]
+  },
+  "Alternative Pop Rock" : {
+    "min" : "1",
+    "max" : "1",
+    "tracks" : [
+      {
+        "title" : "못 죽는 기사와 비단 요람",
+        "artist" : "LUCY",
+        "img" : "https://drive.google.com/uc?export=download&id=1ldWxsD49AbvL9QzTZSxRsrSmzPvtOdae",
+        "url" : "https://drive.google.com/uc?export=download&id=1_KPUas9CYiuwGU-OK97bgDCeWs2PwYnY"
+      }
+    ]
   }
 }
