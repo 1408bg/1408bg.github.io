@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일정</title>
+  <style>
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  overflow: hidden;
+}
+ul {list-style-type: none;}
+li {margin-left: 10px;}
+header {
+  width: 100vw;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  background-color: #4F609C;
+}
+header > .title {
+  font-weight: 700;
+  font-size: 28px;
+  margin-left: 15px;
+}
+header > #id {
+  float: right;
+  margin-right: 15px;
+}
+aside {
+  width: 120px;
+  height: 100vh;
+  float: left;
+  background-color: #D9D9D9;
+  margin: 10px;
+}
+main {
+  width: calc(100vw - 160px);
+  height: 100vh;
+  float: left;
+  background-color: #D9D9D9;
+  margin: 10px;
+}
+.division {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.division > .title {
+  font-weight: 700;
+  font-size: 18px;
+}
+.interactive-line {
+  float: right;
+  margin: 10px;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+}
+.interactive-line > select {
+  border: none;
+  position: absolute;
+  right: 30px;
+  background-color: transparent;
+}
+.interactive-line > select option {
+  background-color: #D9D9D9;
+}
+.interactive-line > span {
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  font-size: 32px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.schedule {
+  clear: both;
+}
+.schedule > li {
+  padding: 5px 10px;
+  background-color: #B5B6BA;
+  border-radius: 5px;
+  margin: 10px;
+  height: 20px;
+  cursor: pointer;
+}
+.schedule > li:hover {
+  background-color: darkgray;
+}
+.left-node {float: left;}
+.right-node {float: right;}
+.input-node {
+  background-color: #63ADF1 !important;
+  height: 100% !important;
+}
+.input-node > * {
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  background-color: #D9D9D9;
+  width: 80px;
+}
+.input-node > *:first-child {
+  width: 100px;
+}
+.input-node > *:nth-child(2) {
+  width: 200px !important;
+}
+.input-node > *:nth-child(4) {
+  width: 40px;
+}
+.input-node > *:last-child {
+  width: 50px !important;
+  margin-right: 0px !important;
+  cursor: pointer;
+}
+#input-btn {
+  float: right;
+}
+#dropdown {
+  position: relative;
+  width: 320px;
+}
+#sch-text  {
+  width: 120px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  background-color: aliceblue;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 5px 0px 15px;
+  transition: all 0.5s;
+}
+#sch-text:focus {
+  width: 240px;
+}
+#sch-content {
+  position: absolute;
+  margin-left: 15px;
+  width: 174px;
+  border-radius: 3px;
+  display: none;
+}
+.sch-items {
+  font-size: 15px;
+  background-color: whitesmoke;
+  color: darkslategray;
+  border: 2px solid skyblue;
+  width: 176px;
+  cursor: pointer;
+}
+.sch-items:first-child {background-color: rgb(179, 221, 237);}
+.sch-items:hover {background-color: skyblue;}
+#sch-btn {
+  border: none;
+  border-radius: 4px;
+  width: 50px;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+.delete {
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+  width: 45px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <span class="title">일정</span>
+    <span id="id">로그인한 ID</span>
+  </header>
+  <aside>
+    <div class="division">
+      <span class="title">행정동</span>
+      <ul>
+        <li>분류1</li>
+        <li>분류2</li>
+      </ul>
+    </div>
+    <div class="division">
+      <span class="title">과</span>
+      <ul>
+        <li>분류1</li>
+        <li>분류2</li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <div class="interactive-line">
+      <select onchange="sort()">
+        <option value="time">시간순</option>
+        <option value="reverse-time">역시간순</option>
+      </select>
+      <span onclick="insertEvent()">+</span>
+    </div>
+    <div id="dropdown">
+      <input spellcheck="false" autocomplete="off" type="text" id="sch-text" value="" placeholder="제목을 입력하세요">
+      <input type="button" id="sch-btn" onclick="schAction()" value="검색">
+      <div id="sch-content"></div>
+    </div>
+    <ul class="schedule">
+    </ul>
+  </main>
+  <script>
+// 생성시 사용될 user의 부서는 고정
+const userDepartment = "테스트";
+// ul
+const schedule = document.querySelector(".schedule");
+// 실제 데이터 - fetch 예정
+let schedules = [];
+// filter에 사용될 검색 단어
+let schWord = "";
+// ul에 추가되는 조건 (함수)
+let filter = (e) => {return true;}
+
+// !구현안됨! 백엔드에서 데이터 가져오기
+const fetchSchedules = () => {
+  schedules = [];
+}
+
+// !구현안됨! json object를 서버에 전송하기 (insert)
+const postSchedule = (data) => {
+  return;
+}
+
+// !구현안됨! select의 value를 기반으로 sql select구문에서 요청하는것이 효율적이라 생각
+const sort = () => {
+  return;
+}
+
+// data json object를 반환 (data!)
+const getData = (month, day, title, locate, headcount) => {
+  const data = {
+    "day" : [month, day],
+    "title" : title,
+    "locate" : locate,
+    "headcount" : headcount+"명",
+    "department" : userDepartment+"부"
+  };
+  return data;
+};
+
+// schedules의 num번째 인덱스 제거
+const deleteData = (num) => {
+  schedules.splice(num, 0);
+};
+
+// html ul에 li 요소 추가 (data!)
+const appendList = (month, day, title, locate, headcount, department, num) => {
+  let li = document.createElement("li");
+  li.addEventListener("click", () => {
+    alert(`selected : ${num+1}`);
+  });
+  
+  let leftNode = document.createElement("div");
+  leftNode.classList.add("left-node");
+  let contents = document.createElement("span");
+  contents.innerText = `${month}\t${day}\t${title}`;
+  leftNode.appendChild(contents);
+
+  let rightNode = document.createElement("div");
+  rightNode.classList.add("right-node");
+  contents = document.createElement("span");
+  contents.innerText = `${locate}\t${headcount}\t${department}`;
+  rightNode.appendChild(contents);
+
+  li.appendChild(leftNode);
+  li.appendChild(rightNode);
+  
+  schedule.appendChild(li);
+};
+
+// 팝업
+const createView = (num) => {
+  let deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete");
+  deleteBtn.innerHTML = "삭제";
+  deleteBtn.onclick = () => {
+    deleteData(num);
+    li.remove();
+    deleteBtn.remove();
+  };
+  li.appendChild(deleteBtn);
+};
+
+// filter 결과에 맞추어 appendList 실행 (data!)
+const loadData = () => {
+  let temp;
+  schedule.innerHTML = "";
+  for (var i = 0; i < schedules.length; i++){
+    temp = schedules[i];
+    if (filter(temp)){
+      appendList(temp['day'][0], temp['day'][1], temp['title'], temp['locate'], temp['headcount'], temp['department'], i);
+    }
+  }
+};
+
+// schedules에 data 추가 및 loadData, updateTitles 실행
+const addSchedules = (data) => {
+  schedules.push(data);
+  postSchedule(data);
+  loadData();
+  updateTitles();
+};
+
+// plus 버튼 클릭 이벤트
+const insertEvent = () => {
+  const now = new Date();
+  schedule.innerHTML = "";
+  let li = document.createElement("li");
+  li.classList.add('input-node');
+  li.innerHTML = `<input type='date' id='date' value='${now.getFullYear()}-${now.getMonth() < 10 ? '0'+(now.getMonth()+1).toString() : now.getMonth()+1}-${now.getDate() < 10 ? '0'+now.getDate().toString() : now.getDate()}'>`;
+  li.innerHTML += "<input type='text' id='title' placeholder='행사명'>";
+  li.innerHTML += "<input type='text' id='locate' placeholder='장소명'>";
+  li.innerHTML += "<input type='number' id='headcount' min='0' value='0'>";
+  li.innerHTML += "<input type='button' onclick='insertAction()' value='추가'>";
+  schedule.appendChild(li);
+  for (var i = 0; i < schedules.length; i++){
+    temp = schedules[i];
+    if (filter(temp)){
+      appendList(temp['day'][0], temp['day'][1], temp['title'], temp['locate'], temp['headcount'], temp['department'], i);
+    }
+  }
+};
+
+// input value 확인용
+const checkValues = (inputs) => {
+  for (var i = 0; i < (inputs.length-1); i++){
+    if (inputs[i].value == ""){
+      return false;
+    }
+  }
+  return true;
+}
+
+// 추가 버튼 클릭 이벤트 (data!)
+const insertAction = () => {
+  const inputs = document.querySelector('.input-node').childNodes;
+  console.log(inputs);
+  if (!checkValues(inputs)){
+    return;
+  }
+  deleteData(0);
+  addSchedules(getData(inputs[0].value.split("-")[1],inputs[0].value.split("-")[2], inputs[1].value, inputs[2].value, inputs[3].value, userDepartment));
+}
+
+/*      검색 시작      */
+titles = [];
+const updateTitles = () => {
+  titles = [];
+  schedules.forEach((e) => {
+    if (filter(e)){
+      titles.push(e['title']);
+    }
+  });
+};
+const schText = document.querySelector("#sch-text");
+const schContent = document.querySelector("#sch-content");
+// 키 입력이 끝났을 때
+schText.addEventListener("keyup", () => {
+  if (!schText.value.trim()) {
+    schContent.innerHTML = "";
+    schContent.style.display = "none";
+    return;
+  }
+  schContent.innerHTML = "";
+  schContent.style.display = "none";
+
+  let schArr = []; // 찾은 걸 담을 배열
+  for (let i = 0; i < titles.length; i++) {
+    if (titles[i].includes(schText.value)) {
+      schArr.push(`<div class=sch-items onclick="schSel(${i})">${titles[i]}</div>`);
+    }
+  }
+
+  if (schArr.length) { // 찾은거 보여주기
+    schArr.forEach((item) => {
+      schContent.innerHTML += item;
+    });
+    schContent.style.display = "block";
+  }
+
+  // 엔터키로 자동완성
+  if (event.keyCode == 13) {
+    if (schContent.children[0]) {
+      schText.value = schContent.children[0].innerHTML;
+      schContent.style.display = "none";
+    }
+  }
+});
+// schContent 선택
+const schSel = (i) => {
+  schText.value = schContent.children[i].innerHTML;
+  schContent.style.display = "none";
+};
+// 자동완성 동작
+const schAction = () => {
+  if (schText.value == "") {
+    filter = (e) => {return true;}
+    loadData();
+    return;
+  }
+  schWord = schText.value;
+  filter = (e) => {
+    if(e['title'].includes(schWord)){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  schText.value ="";
+  schContent.style.display = "none";
+  loadData();
+};
+
+// 더미데이터
+addSchedules(getData("05", "22", "행사1", "장소1", "1"));
+addSchedules(getData("05", "23", "행사2", "장소2", "99"));
+addSchedules(getData("05", "23", "행사3", "장소3", "128"));
+  </script>
+</body>
+</html>
