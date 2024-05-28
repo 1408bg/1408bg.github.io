@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CustomMD</title>
+  <style>
+#output {
+  padding: 20px;
+  box-shadow: 5px 5px 10px 2px black;
+  width: 500px;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+td {
+  padding: 5px;
+}
+pre {
+  background-color: ghostwhite;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px 0.1px black;
+}
+  </style>
+</head>
+<body>
+  <h1>INPUT</h1>
+  <textarea cols="50" rows="10" id="input" oninput="update()"></textarea>
+  <h1>OUTPUT</h1>
+  <div id="output"></div>
+  <h2>예시</h2>
+  <pre># TEST
+&lt;!list
+- hello
+- world
+list!&gt;
+&lt;!table
+(!1,2,3,4!)
+(!,2,,4!)
+(!1,,,4!)
+table!&gt;</pre>
+  <script>
+const input = document.getElementById("input");
+const output = document.getElementById("output");
+let temp;
+const sleep = (ms) => {
+  return new Promise((r) => setTimeout(r, ms));
+}
+const update = async () => {
+  output.innerHTML = "";
+  let data = input.value;
+  data = data.split('\n');
+  let temp;
+  for (var i = 0; i < data.length; i++){
+    temp = data[i];
+    await execMD(temp);
+  }
+};
+const execMD = async (value) => {
+  if (value.startsWith("<!list")){
+    await startList();
+    return;
+  }
+  if (value.startsWith("list!>")){
+    await endList();
+    return;
+  }
+  if (value.startsWith("- ")){
+    value = value.replace("- ", "");
+    await addList(value);
+    return;
+  }
+  if (value.startsWith("# ")){
+    value = value.replace("# ", "");
+    await addH1(value);
+    return;
+  }
+  if (value.startsWith("<!table")){
+    value = value.replace("<!table", "");
+    await startTable();
+    return;
+  }
+  if (value.startsWith("table!>")){
+    value = value.replace("table!>");
+    await endTable();
+    return;
+  }
+  if (value.startsWith("(!") && value.endsWith("!)")){
+    value = value.replace("(!", "");
+    value = value.replace("!)", "");
+    value = value.split(",");
+    await addTR(value);
+    return;
+  }
+  addSpan(value, true);
+}
+const addSpan = (value, space) => {
+  output.innerHTML += `<span>${value}</span>`;
+  if (space){
+    output.innerHTML += '<br>';
+  }
+};
+const addH1 = async (value) => {
+  output.innerHTML += `<h1>${value}</h1>`;
+}
+const startList = async () => {
+  temp = '<ul>';
+};
+const endList = async () => {
+  temp += '</ul>';
+  output.innerHTML += temp;
+};
+const addList = async (value) => {
+  temp += `<li>${value}</li>`;
+};
+const startTable = async () => {
+  temp = "<table>";
+}
+const endTable = async () => {
+  temp += "</table>";
+  output.innerHTML += temp;
+}
+const addTR = async (values) => {
+  temp += "<tr>";
+  for (var i = 0; i < values.length; i++){
+    temp += `<td>${values[i]}</td>`;
+  }
+  temp += "</tr>";
+}
+  </script>
+</body>
+</html>
