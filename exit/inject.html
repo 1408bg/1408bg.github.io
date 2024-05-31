@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Inject!</title>
+  <style>
+textarea {
+  background-color: aliceblue;
+  transition: all 3s;
+}
+textarea:focus {
+  background-color: lightcyan;
+}
+#__output__ {
+  min-width: 500px;
+  min-height: 300px;
+  border-radius: 20px;
+  background-color:ghostwhite;
+  margin: 10px;
+  border: 1px solid;
+  transition: all 2s;
+}
+  </style>
+</head>
+<body>
+  <h1>Injection 놀이터</h1>
+  <textarea oninput="__update__()">이곳에 html를 쓰고 inject</textarea>
+  <div id="__output__"></div>
+  <script>
+const __input__ = document.querySelector("textarea");
+const __output__ = document.getElementById("__output__");
+const __update__ = () => {
+  __output__.innerHTML = __input__.value;
+}
+  </script>
+</body>
+</html>
