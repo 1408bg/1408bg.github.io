@@ -43,7 +43,7 @@
     ]
   },
   "Labor Groove" : {
-    "min" : "1",
+    "min" : "3",
     "max" : "3",
     "tracks" : [
       {
