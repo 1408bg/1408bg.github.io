@@ -1,5 +1,5 @@
 {
-  "titles" : ["Default", "Labor Groove"],
+  "titles" : ["Labor Groove"],
   "Default" : {
     "min" : "1",
     "max" : "1",
@@ -7,7 +7,7 @@
       {
         "title": "대덕소프트웨어마이스터고등학교 교가",
         "artist": "김명순 작사 / 강창식 작곡",
-        "img" : "https://drive.google.com/uc?export=download&id=1SBCNCgHbb_JPgYcOb0tFGAalNOrqCots",
+        "img" : "https://via.placeholder.com/100",
         "url": "https://drive.google.com/uc?export=download&id=1ba_4jeO0sjDRh64GpXT7_Bs2dzMCBjs2"
       }
     ]
@@ -19,25 +19,25 @@
       {
         "title": "Four Seasons: Summer",
         "artist": "Antonio Vivaldi",
-        "img" : "https://drive.google.com/uc?export=download&id=1Iaqqk3t_FkC5moZgDXrqYslXMJJVh__p",
+        "img" : "https://via.placeholder.com/100",
         "url": "https://drive.google.com/uc?export=download&id=1OY06CwKalMDU-mXSx46YgexX7hymeV7Y"
       },
       {
         "title" : "Fantaisie Impromptu",
         "artist" : "Frédéric Chopin (Pf. Dmitry Shishkin)",
-        "img" : "https://drive.google.com/uc?export=download&id=1A51otJLLsSi3g19Koh6wWbZzES5NR5s8",
+        "img" : "https://via.placeholder.com/100",
         "url" : "https://drive.google.com/uc?export=download&id=1jBspDQVtrO0AFRJk62-nGPBD9Tep3Dkg"
       },
       {
         "title" : "Summer",
         "artist" : "Joe Hisaishi",
-        "img" : "https://drive.google.com/uc?export=download&id=1RMfTSPZB5fBg1sqX3tKYkcl6y0CfdFae",
+        "img" : "https://via.placeholder.com/100",
         "url" : "https://drive.google.com/uc?export=download&id=1u5kqZoYTUTaBSAbYysy7-LaBd6CDq5jF"
       },
       {
         "title" : "24 Caprices, op. 1: No. 24",
         "artist" : "Nicolo Paganini",
-        "img" : "https://drive.google.com/uc?export=download&id=1wi4zcVg_rP4SKEIHr7TapcvkfQG3QPrj",
+        "img" : "https://via.placeholder.com/100",
         "url" : "https://drive.google.com/uc?export=download&id=1wv5xAAuJFV7CZYqu6_nviveUaSfRVUMq"
       }
     ]
@@ -49,19 +49,19 @@
       {
         "title": "@Override",
         "artist": "Yoshida Yasei",
-        "img" : "https://drive.google.com/uc?export=download&id=1fj4yhqAb6KrL-O5t_R2dnLlR3MHkWlVI",
+        "img" : "https://via.placeholder.com/100",
         "url": "https://drive.google.com/uc?export=download&id=1vtcqMllYO4E8BVFQmB1PqmLbot3lTv_P"
       },
       {
         "title": "メスマライザー",
         "artist": "サツキ",
-        "img" : "https://drive.google.com/uc?export=download&id=1SOqHlsbMHOgCpnY1Hro1s8LYE_X-vbFp",
+        "img" : "https://via.placeholder.com/100",
         "url": "https://drive.google.com/uc?export=download&id=1dEq2dZNbSlYgNRtjiJPn_IxjtbLl5aYH"
       },
       {
         "title" : "-ERROR",
         "artist" : "niki",
-        "img" : "https://drive.google.com/uc?export=download&id=1SBCNCgHbb_JPgYcOb0tFGAalNOrqCots",
+        "img" : "https://via.placeholder.com/100",
         "url" : "https://drive.google.com/uc?export=download&id=1CdZlxpDTjXYh_lhPU2q0nfyS65l-lV02"
       }
     ]
@@ -73,13 +73,13 @@
       {
         "title" : "못 죽는 기사와 비단 요람",
         "artist" : "LUCY",
-        "img" : "https://drive.google.com/uc?export=download&id=1ldWxsD49AbvL9QzTZSxRsrSmzPvtOdae",
+        "img" : "https://via.placeholder.com/100",
         "url" : "https://drive.google.com/uc?export=download&id=1_KPUas9CYiuwGU-OK97bgDCeWs2PwYnY"
       },
       {
         "title" : "Help me, ERINNNNNN!!",
         "artist" : "ビートまりお×まろん",
-        "img" : "https://i1.sndcdn.com/artworks-2EAmBUoeowXbyxxv-Z3d8WA-t500x500.jpg",
+        "img" : "https://via.placeholder.com/100",
         "url" : "https://drive.google.com/uc?export=download&id=1AeDDhOX9bRjoJ5DABBsX8XjquUILoVaL"
       }
     ]
