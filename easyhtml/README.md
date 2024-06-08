@@ -1,9 +1,9 @@
 ## EasyHTML in Java !!
 ### Download Now ⬇️⬇️
 [Download✅](https://drive.google.com/file/d/1I48_tJrQ5dN3aNAMlPb1zzlwfe47Aj9r/view?usp=drive_link)
-
-_ver : **Proto 1**, 20KB_
-
+- ver : Proto
+- size : 12KB
+- description : An incomplete version
 ### Html as object?!
 Intuitive configuration with chaining and constructor
 ### Build quickly!
