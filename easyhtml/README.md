@@ -2,7 +2,7 @@
 ### Download Now ⬇️⬇️
 [Download✅](https://drive.google.com/file/d/1I48_tJrQ5dN3aNAMlPb1zzlwfe47Aj9r/view?usp=drive_link)
 - ver : Proto 1
-- size : 12KB
+- size : 20KB
 - description : An incomplete version
 ### Html as object?!
 Intuitive configuration with chaining and constructor
@@ -11,7 +11,7 @@ just uses the generate method
 ### Simple Use!
 Click the link and add it to your package📂
 ## How to use?
-_Based on Proto 1 version_
+_Based on : Proto 1_
 ### In Create a file
 ```java
 public class Main {
