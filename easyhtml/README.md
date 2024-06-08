@@ -10,8 +10,8 @@ just uses the generate method
 ### Simple Use!
 Click the link and add it to your package
 
-#### How to use?
-**In Spring Boot**
+## How to use?
+### In Spring Boot
 ```java
 @RestController
 public class MyController {
