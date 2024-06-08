@@ -1,8 +1,8 @@
 ## EasyHTML in Java !!
 
-[Download](https://drive.google.com/file/d/16-1hhxZbPNS8SpH4bxGtDs1Pp6A1jMku/view?usp=drive_link)
+[Download](https://drive.google.com/file/d/1I48_tJrQ5dN3aNAMlPb1zzlwfe47Aj9r/view?usp=drive_link)
 
-_ver : **Proto 1**_
+_ver : **Proto 1**, 20KB_
 
 ### Html as object?!
 Intuitive configuration with chaining and constructor
