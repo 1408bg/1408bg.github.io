@@ -11,7 +11,7 @@ just uses the generate method
 Click the link and add it to your package
 
 ## How to use?
-### In Spring Boot
+> ### In Spring Boot
 ```java
 @RestController
 public class MyController {
