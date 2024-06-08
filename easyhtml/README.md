@@ -10,7 +10,6 @@ Intuitive configuration with chaining and constructor
 just uses the generate method
 ### Simple Use!
 Click the link and add it to your package📂
----
 ## How to use?
 _Based on Proto 1 version_
 ### In Create a file
