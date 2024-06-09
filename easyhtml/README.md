@@ -1,8 +1,8 @@
 ## EasyHTML in Java !!
 ### Download Now ⬇️⬇️
-[Download✅](https://drive.google.com/file/d/1I48_tJrQ5dN3aNAMlPb1zzlwfe47Aj9r/view?usp=drive_link)
-- ver : Proto 1
-- size : 20KB
+[Download✅](https://drive.google.com/file/d/10mDwLYCq25DvGkLPOH1syVkeMb6BlN0v/view?usp=drive_link)
+- ver : Proto 2
+- size : 21KB
 - description : An incomplete version
 
 ### Html as object?!
@@ -12,9 +12,11 @@ just uses the generate method
 ### Simple Use!
 Click the link and add it to your package📂
 ## How to use?
-_Based on : Proto 1_
+_Based on : Proto 2_
 ### In Create a file
 ```java
+package com.example.html;
+
 public class Main {
   public static void main(String[] args) {
     EasyHTML.generate(new CounterApp(), "test");
@@ -24,7 +26,6 @@ public class Main {
       HTML root = this; // This object is the root of your html.
 
       Head head = new Head(); // Head is head of your html.
-
       Title title = new Title("MyApp"); // As you can see, it's just a title.
       Style style = new Style( // Style is the theme of your html, just css.
         new InlineStyle( // There are normal css syntax.
@@ -37,9 +38,18 @@ public class Main {
           ".FloatingActionButton { position: absolute; bottom: 50px; right: 50px; width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; border: none; cursor: pointer; font-size: 30px; }"
         )
       );
+      Script script = new Script(
+        new JavaScript("linkState('count', '.clickCounter');")
+        /*
+        [linkState]
+        Links a state variable to DOM elements matching a given query selector.
+        Updates the elements' innerHTML to reflect the state value.
+         */
+      );
       head // The properties now apply to the head.
         .setTitle(title)
-        .setStyle(style);
+        .setStyle(style)
+        .setScript(script);
 
       Body body = new Body(); // Body is the real page of your html.
       Header header = new Header(); // It's time to define the layout
@@ -52,8 +62,12 @@ public class Main {
         new Span("").setClass("clickCounter"),
         new Button(
           "+",
-          new InlineJavaScript("setState('.clickCounter', i += 1)"))
-          .setClass("FloatingActionButton")
+          new InlineJavaScript("setState('count', (prev) => { return prev + 1 });")
+          /*
+          [setState]
+          Updates the state with a callback function and refreshes linked DOM elements' innerHTML.
+           */
+        ).setClass("FloatingActionButton")
       );
       section.addChildren( // Layout has no hesitation in becoming a child when it comes to content elements.
         counterWrapper
@@ -67,7 +81,11 @@ public class Main {
       root // Finally, assign two elements of html.
         .setHead(head)
         .setBody(body)
-        .useState("i = 0"); // It's a variable. Let's see how it's used
+        .useState("count", "0");
+        /*
+        [useState]
+        Initializes a state variable with a unique identifier and a given value.
+         */
     }
   }
 }
