@@ -1,6 +1,6 @@
 {
   "ver" : "0.3",
-  "titles" : ["Classic", "Labor Groove"],
+  "titles" : ["Default", "Classic", "Labor Groove"],
   "Default" : {
     "min" : "1",
     "max" : "1",
@@ -8,7 +8,7 @@
       {
         "title": "대덕소프트웨어마이스터고등학교 교가",
         "artist": "김명순 작사 / 강창식 작곡",
-        "img" : "https://via.placeholder.com/100",
+        "img" : "https://avatars.githubusercontent.com/u/26157097?s=400&v=4",
         "url": "https://drive.google.com/uc?export=download&id=1ba_4jeO0sjDRh64GpXT7_Bs2dzMCBjs2"
       }
     ]
