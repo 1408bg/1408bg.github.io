@@ -27,7 +27,7 @@ Flutter로 원하는 앱을 개발하는 것은 쉬우며 또한 어려운 일�
 - 책 데이터의 각 key는 다음과 같습니다. { "title", "author", "description" }
 - 책 데이터를 리스트로 보여주세요.
 ## 결과 화면
-(https://1408bg.github.io/homework/flutter/output.png)
+![output](https://1408bg.github.io/homework/flutter/output.png)
 ## 핵심 위젯
 _MaterialApp, Scaffold, Text는 기본 소양입니다._
 ### Center
@@ -68,3 +68,13 @@ builder가 꼭 ListTile를 반환해야하는 것은 아니니 상황에 맞는 
 이 위젯은 child의 overflow를 막아줍니다.
 
 하위 위젯이 크기를 자꾸 넘을 때 유용하지요.
+## 마무리하며..
+첫 번째 숙제 치고는 조금 어려운 느낌이 있습니다.
+
+그러나 프로젝트에서 제 역할을 다하고, 협업을 하려면 최소 이정도는 해야 한다고 생각합니다.
+
+구글링은 개발자 기본 소양이며, ChatGPT 사용 또한 환영합니다.
+
+궁금한 점이 있으면 언제든 카톡으로 연락하십시오.
+
+[Notion](https://1408bg.notion.site/Flutter-b02feb72e56644c5b19a0dad6d7ebc95)에 유용한 위젯이 많으니 구경해보시고, 과제 제출은 카톡으로 하시면 됩니다.
