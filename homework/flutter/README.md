@@ -23,11 +23,11 @@ Flutter로 원하는 앱을 개발하는 것은 쉬우며 또한 어려운 일�
 지금의 요구사항은 단순하고 명확합니다.
 
 **요구사항**
-- https://1408bg.github.io/assets/dummy.json에 책의 데이터가 있습니다.
+- https://1408bg.github.io/assets/dummy.json 링크에 책의 데이터가 있습니다.
 - 책 데이터의 각 key는 다음과 같습니다. { "title", "author", "description" }
 - 책 데이터를 리스트로 보여주세요.
 ## 결과 화면
-[https://1408bg.github.io/homework/flutter/output.png]
+(https://1408bg.github.io/homework/flutter/output.png)
 ## 핵심 위젯
 _MaterialApp, Scaffold, Text는 기본 소양입니다._
 ### Center
