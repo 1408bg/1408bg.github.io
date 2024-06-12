@@ -15,7 +15,7 @@ Flutter로 원하는 앱을 개발하는 것은 쉬우며 또한 어려운 일�
 
 그럼 즐거운 개발 되십시오 ^^
 # 첫 번째 숙제
-## 주제 : EBookReader - 시작
+## EBookReader - 시작
 ### 목적 : api 활용 능력 향상, FutureBuilder, ListView 위젯 사용, 위젯 생명주기의 이해
 ### 제출 기한 : 6/11 ~ 6/20
 여러분은 온라인 책을 소개하는 어플리케이션 제작을 의뢰받았습니다.
@@ -51,7 +51,7 @@ mainAxisAlignment로 모든 children의 간격을 조절할 수 있지요.
 
 언제 완성될지 모르는 builder에 사용하세요.
 
-보통은 future에 비동기 작업을 곁들여 사용합니다.
+보통은 future에 비동기 작업을 곁들여 사용합니다. (예시로는 Future.delayed, http.get 등이 있지요.)
 
 builder는 context, snapdata를 필요로 하며 각각 자신의 상위 위젯, future의 실행 결과를 의미합니다.
 
@@ -67,7 +67,9 @@ builder가 꼭 ListTile를 반환해야하는 것은 아니니 상황에 맞는 
 ### Expanded
 이 위젯은 child의 overflow를 막아줍니다.
 
-하위 위젯이 크기를 자꾸 넘을 때 유용하지요.
+하위 위젯이 부모 위젯의 크기를 넘을 때 유용하지요.
+
+Text 위젯의 overflow 속성 또한 잊지 마세요.
 ## 마무리하며..
 첫 번째 숙제 치고는 조금 어려운 느낌이 있습니다.
 
