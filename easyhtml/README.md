@@ -1,8 +1,8 @@
 ## EasyHTML in Java !!
 ### Download Now ⬇️⬇️
-[Download✅](https://drive.google.com/file/d/10mDwLYCq25DvGkLPOH1syVkeMb6BlN0v/view?usp=drive_link)
-- ver : Proto 2
-- size : 21KB
+[Download✅](https://drive.google.com/file/d/1R_Wazotiy1SneWCqyNeqbmxJoIbfRLYc/view?usp=drive_link)
+- ver : Proto 3
+- size : 22KB
 - description : An incomplete version
 
 ### Html as object?!
@@ -38,18 +38,9 @@ public class Main {
           ".FloatingActionButton { position: absolute; bottom: 50px; right: 50px; width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; border: none; cursor: pointer; font-size: 30px; }"
         )
       );
-      Script script = new Script(
-        new JavaScript("linkState('count', '.clickCounter');")
-        /*
-        [linkState]
-        Links a state variable to DOM elements matching a given query selector.
-        Updates the elements' innerHTML to reflect the state value.
-         */
-      );
       head // The properties now apply to the head.
         .setTitle(title)
-        .setStyle(style)
-        .setScript(script);
+        .setStyle(style);
 
       Body body = new Body(); // Body is the real page of your html.
       Header header = new Header(); // It's time to define the layout
@@ -81,10 +72,16 @@ public class Main {
       root // Finally, assign two elements of html.
         .setHead(head)
         .setBody(body)
-        .useState("count", "0");
+        .useState("count", "0")
         /*
         [useState]
         Initializes a state variable with a unique identifier and a given value.
+         */
+        .linkState("count", ".clickCounter");
+        /*
+        [linkState]
+        Links a state variable to DOM elements matching a given query selector.
+        Updates the elements' innerHTML to reflect the state value.
          */
     }
   }
