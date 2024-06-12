@@ -12,7 +12,7 @@ just uses the generate method
 ### Simple Use!
 Click the link and add it to your package📂
 ## How to use?
-_Based on : Proto 2_
+_Based on : Proto 3_
 ### In Create a file
 ```java
 package com.example.html;
