@@ -1,2 +1,7 @@
 # b_g@dsm.hs.kr
-## [Nav](/nav.html)
+The deploy page of [1408bg](https://github.com/1408bg) _not a Distribution!_
+## Deploy List
+#### [APK STORE(BETA)](https://1408bg.github.io/store)
+Experience the apk made of flutter in advance
+#### [EasyHTML (Proto)](https://1408bg.github.io/easyhtml/)
+The OOP HTML
