@@ -1,3 +1,6 @@
 {
-  "lang" : ["c", "c++", "c#", "python", "javascript", "java"]
+  "major" : ["Algorithm", "Web with Vanilla JS", "React.js", "Unity", "Flutter", "Node.js"],
+  "Algorithm" : {
+    "contents" : "um"
+  }
 }
