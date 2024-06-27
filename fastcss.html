@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FastCSS</title>
+  <style>
+input {
+  width: 30px;
+  transition: all 0.5s;
+}
+input:focus {
+  width: 300px;
+}
+button {
+  border: 1px solid black;
+  padding: 1.5px;
+  background-color: white;
+  color: black;
+  transition: all 0.5s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+#output {
+  padding: 10px;
+  box-shadow: -2px -2px 2px black inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  </style>
+</head>
+<body>
+  <input autocomplete="none" type="text" placeholder="tag" id="tag" oninput="updateTag()">
+  <input autocomplete="none" type="text" placeholder="style" id="style" oninput="updateStyle()">
+  <button onclick="apply()">Apply</button>
+  <div id="output"></div>
+  <script>
+const tag = document.getElementById("tag");
+const style = document.getElementById("style");
+const output = document.getElementById("output");
+let box;
+const updateTag = () => {
+  box = document.createElement(tag.value);
+}
+const updateStyle = () => {
+  box.style = style.value;
+}
+const apply = () => {
+  output.innerHTML = "";
+  output.appendChild(box);
+}
+  </script>
+</body>
+</html>
