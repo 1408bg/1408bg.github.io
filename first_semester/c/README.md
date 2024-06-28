@@ -7,26 +7,26 @@ visual studio의 컴파일러는 Microsoft Visual C++ Compiler 로 추정 << 홈
 
 #### C 파일을 만든 직후 다음 코드 작성
 ```c
-#include <stdio.h>			<< #(전처리기) include(헤더 파일을 포함) <stdio.h>(STanDardInputOutput.Headerfile) << 표준 입출력 헤더 파일
-int main(void){				<< int(함수의 반환 자료형) main(프로그램이 최우선 실행시키는 함수 키워드) void(main이 파라미터를 받지 않음을 명시)
-	printf("Hello World!");	<< printf(stdio.h에 포함된 표준 출력 함수) "Hello World!"(char[13])
-	return 0;				<< return 0(main함수가 반환하는 값 0 << 프로그램의 종료 여부)
+#include <stdio.h>			// #(전처리기) include(헤더 파일을 포함) <stdio.h>(STanDardInputOutput.Headerfile) << 표준 입출력 헤더 파일
+int main(void){				// int(함수의 반환 자료형) main(프로그램이 최우선 실행시키는 함수 키워드) void(main이 파라미터를 받지 않음을 명시)
+	printf("Hello World!");	// printf(stdio.h에 포함된 표준 출력 함수) "Hello World!"(char[13])
+	return 0;				// return 0(main함수가 반환하는 값 0 << 프로그램의 종료 여부)
 }
 ```
 (해석 : 표준 입출력 라이브러리를 포함하여 출력 함수를 사용 가능하게 하고, 문자열을 출력한 뒤, main 함수를 정수 0 으로 반환하여 프로그램 종료)
 
-코드 작성 후 compile and run 을 통해 실행 << **Hello World! 가 출력되는 프로그램**
+코드 작성 후 compile and run 을 통해 실행 // **Hello World! 가 출력되는 프로그램**
 ## 2강 - 변수와 상수
 변수 : 프로그램이 실행되는 동안 언제든지 저장된 값이 변경될 수 있는 공간 << 변하는 수
 상수 : 한번 정해지면 값이 변경되지 않는 데이터 << 항상 변함없는 수
 메모리 : 프로그램이 올라가 실행되는 공간, 프로그램의 모든 변수와 상수의 값을 저장
 ```c
-int x;				<< 변수의 선언, 정수형 변수의 식별자 x 및 그 공간을 할당
-x = 5;				<< 변수의 초기화, 정수형 변수 x의 값을 정수 5로 초기화 (대입 연산자 이용)
-printf("%d", x);	<< 변수의 사용, printf에서 서식지정자 %d를 이용하여 정수형 변수 x 출력
+int x;				// 변수의 선언, 정수형 변수의 식별자 x 및 그 공간을 할당
+x = 5;				// 변수의 초기화, 정수형 변수 x의 값을 정수 5로 초기화 (대입 연산자 이용)
+printf("%d", x);	// 변수의 사용, printf에서 서식지정자 %d를 이용하여 정수형 변수 x 출력
 
-printf("변수 x의 메모리 크기 : %d",sizeof(x)) << 정수형 변수의 크기, sizeof() 연산자를 사용하여 변수 x의 크기 출력 << 정수형 변수의 크기인 4byte 반환
-printf("%d/n%d",x,x) << 문자열 내에서 특정 기능을 수행하는 이스케이프 문자 /n을 통해 개행
+printf("변수 x의 메모리 크기 : %d",sizeof(x)) // 정수형 변수의 크기, sizeof() 연산자를 사용하여 변수 x의 크기 출력 << 정수형 변수의 크기인 4byte 반환
+printf("%d/n%d",x,x) // 문자열 내에서 특정 기능을 수행하는 이스케이프 문자 /n을 통해 개행
 ```
 ### C의 대략적 자료형
 
