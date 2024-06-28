@@ -4,4 +4,4 @@
 [WebProgramming](https://1408bg.github.io/first_semester/webprogramming)
 
 ## 덧붙임
-[C](/c)
+[C](https://1408bg.github.io/first_semester/c)
