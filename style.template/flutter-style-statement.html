@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statement</title>
+  <link href="flutter.css" rel="stylesheet"/>
+</head>
+<body>
+  <header class="black">
+    <h1>This is header</h1>
+  </header>
+  <div class="Row">
+    <p style="background-color: greenyellow;">This is just text</p>
+    <div class="Center" style="background-color: skyblue;">
+      <p>This is center</p>
+    </div>
+    <div class="x-200 y-80" style="background-color: red;">
+      <p>This is text in a x-200, y-80</p>
+    </div>
+  </div>
+  <div class="x-full y-20"></div>
+  <div class="Center">
+    <div class="Column">
+      <input type="button" class="TextButton red" value="This is text button">
+      <input type="button" class="TextButton green" value="This is text button">
+      <input type="button" class="TextButton blue" value="This is text button">
+      <div class="x-full y-10"></div>
+      <div class="CircularProgressIndicator small"></div>
+      <div class="x-full y-10"></div>
+      <input type="button" class="ElevatedButton wide red" value="This is ElevatedButton" onclick="toggle(document.querySelector('.ElevatedButton.red'))">
+      <input type="button" class="ElevatedButton wide green" value="This is ElevatedButton" onclick="toggle(document.querySelector('.ElevatedButton.green'))">
+      <input type="button" class="ElevatedButton wide blue" value="This is ElevatedButton" onclick="toggle(document.querySelector('.ElevatedButton.blue'))">
+      <div class="x-full y-10"></div>
+      <label class="Label">This is Label<br><input id="example" type="text" placeholder="This is TextField" class="TextField outline"></label>
+    </div>
+  </div>
+  <input type="button" class="FloatingActionButton red" value="1" onclick="toggle(document.querySelector('.FloatingActionButton.red'))">
+  <input type="button" class="FloatingActionButton green" value="2" onclick="toggle(document.querySelector('.FloatingActionButton.green'))">
+  <input type="button" class="FloatingActionButton blue" value="3" onclick="toggle(document.querySelector('.FloatingActionButton.blue'))">
+  <div class="x-full y-20"></div>
+  <div class="Center">
+    <button class="OutlinedButton blue wide" onclick="showDialog()">Show Dialog</button>
+  </div>
+  <div class="x-full y-20"></div>
+  <div class="AlertDialog">
+    <p>This is AlertDialog</p>
+    <button class="TextButton actions" onclick="closeDialog()">close</button>
+  </div>
+  <script>
+    const toggle = (e) => {
+      e.classList.toggle("toggle");
+    };
+    const closeDialog = () => {
+      document.querySelector(".AlertDialog").classList.remove("show");
+    };
+    const showDialog = () => {
+      document.querySelector(".AlertDialog").classList.add("show");
+    };
+  </script>
+</body>
+</html>
