@@ -10,5 +10,6 @@
 그저 한번의 include로 모든 함수와 종속성을 관리하세요, 파일 하나에 그 모든 것이 들어있습니다.
 
 ## Download now
-Windows, 1.0, 27mb
+Windows, 1.0v (27mb)
+
 [download](https://drive.google.com/drive/folders/1YX2TY5Zxf_uasJud8UCTrS1KVH5ZzTXe?usp=sharing)
