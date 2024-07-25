@@ -10,7 +10,8 @@
       "name" : "ASCIIConverter",
       "date" : "2024/03/02",
       "language" : "python",
-      "tag" : ["toy", "windows"],
+      "tag" : ["toy", "basic"],
+      "target" : ["Windows"]
       "url" : "https://github.com/1408bg/ASCIIConverter"
     }
   ]
