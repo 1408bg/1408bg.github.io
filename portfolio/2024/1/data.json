@@ -9,11 +9,11 @@
       "name" : "ASCIIConverter",
       "date" : "2024/03/02",
       "explain" : {
-        "ko" : "입력된 문자열에 아스키 코드에 단순 연산을 함으로서 인코딩/디코딩을 진행",
+        "ko" : "입력된 문자열의 아스키 코드에 단순 연산을 함으로서 인코딩/디코딩을 진행한다.",
         "en" : "Encode/decode the entered string by performing simple operations on the ASCII code"
       },
-      "language" : ["python"],
-      "tag" : ["toy", "basic"],
+      "language" : ["Python"],
+      "tag" : ["Toy", "Basic", "Local", "File"],
       "target" : ["Windows"],
       "url" : "https://github.com/1408bg/ASCIIConverter"
     }
