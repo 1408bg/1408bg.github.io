@@ -13,17 +13,17 @@
       "name" : "ASCIIConverter",
       "date" : "2024/03/02",
       "ko" : {
-        "explain" : "입력된 문자열의 아스키 코드에 단순 연산을 함으로서 인코딩/디코딩을 진행한다.",
+        "explain" : "입력된 문자열의 아스키 코드에 단순 연산을 함으로서 특정 경로의 TXT 파일에 대한 인코딩/디코딩을 진행한다.",
         "caption" : {
           "title" : "성장한 것",
-          "article" : [""]
+          "article" : ["파일 입출력", "EXE 파일의 생성 및 실행 상태 이해", "os 모듈을 사용한 파일위치 관리"]
         }
       },
       "en" : {
-        "explain" : "Encode/decode the entered string by performing simple operations on the ASCII code",
+        "explain" : "Encoding/decoding of the TXT file of a specific path is performed by simply performing an operation on the ASCII code of the input character string.",
         "caption" : {
           "title" : "Grown up",
-          "article" : [""]
+          "article" : ["File I/O", "Understanding the creation and execution status of EXE files", "Managing File Locations Using the os Module"]
         }
       },
       "language" : ["Python"],
