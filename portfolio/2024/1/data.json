@@ -1,4 +1,8 @@
 {
+  "concept" : {
+    "ko" : "항상 성장하는",
+    "en" : "Eternal Growth"
+  },
   "count" : "16",
   "range": {
     "start" : "2024/03/01",
@@ -8,9 +12,19 @@
     {
       "name" : "ASCIIConverter",
       "date" : "2024/03/02",
-      "explain" : {
-        "ko" : "입력된 문자열의 아스키 코드에 단순 연산을 함으로서 인코딩/디코딩을 진행한다.",
-        "en" : "Encode/decode the entered string by performing simple operations on the ASCII code"
+      "ko" : {
+        "explain" : "입력된 문자열의 아스키 코드에 단순 연산을 함으로서 인코딩/디코딩을 진행한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : [""]
+        }
+      },
+      "en" : {
+        "explain" : "Encode/decode the entered string by performing simple operations on the ASCII code",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : [""]
+        }
       },
       "language" : ["Python"],
       "tag" : ["Toy", "Basic", "Local", "File"],
