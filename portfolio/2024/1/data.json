@@ -35,7 +35,11 @@
       "name" : "ScheduleViewer",
       "date" : "2024/03/10",
       "ko" : {
-        "explain" : ""
+        "explain" : "본교 학생을 대상으로 한 각 학년, 반에 대한 당일 시간표와 다음 교시를 추적하여 제공합니다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : [""]
+        }
       }
     }
   ]
