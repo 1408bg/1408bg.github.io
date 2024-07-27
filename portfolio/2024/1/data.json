@@ -30,6 +30,13 @@
       "tag" : ["Toy", "Basic", "Local", "File"],
       "target" : ["Windows"],
       "url" : "https://github.com/1408bg/ASCIIConverter"
+    },
+    {
+      "name" : "ScheduleViewer",
+      "date" : "2024/03/10",
+      "ko" : {
+        "explain" : ""
+      }
     }
   ]
 }
