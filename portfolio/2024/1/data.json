@@ -74,6 +74,72 @@
       "tag" : ["Major experience", "Basic", "Local", "App"],
       "target" : ["Android"],
       "url" : "https://github.com/1408bg/Popcat"
+    },
+    {
+      "name" : "CRUDwithoutDB",
+      "date" : "2024/03/24",
+      "ko" : {
+        "explain" : "런타임에서 콘솔을 통해 문자열 테이블과 그 요소에 대한 CRUD가 가능하게 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["단순한 사용자 정의 명령어의 구현", "객체 관리", "MVC 패턴의 이해"]
+        }
+      },
+      "en" : {
+        "explain" : "Enables CRUD of string tables and their elements through the console at runtime.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Implementation of Simple Custom Commands", "객체 관리", "Understanding MVC Pattern"]
+        }
+      },
+      "language" : ["Java"],
+      "tag" : ["Basic", "Local"],
+      "target" : ["Console"],
+      "url" : "https://github.com/1408bg/CRUDwithoutDB"
+    },
+    {
+      "name" : "ConcludingRemarks",
+      "date" : "2024/03/28",
+      "ko" : {
+        "explain" : "영단어 사전에서 가져온 1000개의 영단어를 통한 끝말잇기를 가능하도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["Set 자료형 실사용", "String 메서드 활용"]
+        }
+      },
+      "en" : {
+        "explain" : "Enables word chain through 1000 English words taken from the English word dictionary.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Actual use of Set data type", "Utilize the String Method"]
+        }
+      },
+      "language" : ["Java"],
+      "tag" : ["Basic", "Local"],
+      "target" : ["Console"],
+      "url" : "https://github.com/1408bg/ConcludingRemarks"
+    },
+    {
+      "name" : "TypingPractice",
+      "date" : "2024/03/31",
+      "ko" : {
+        "explain" : "지정한 주소에서 단어를 추출하여 타자 연습을 진행하고 그 빠르기를 측정한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["Http 요청 및 데이터 변환", "런타임 중 시간 측정", "컴파일러를 통한 jar파일 생성"]
+        }
+      },
+      "en" : {
+        "explain" : "Extract words from the designated address, practice typing, and measure the speed.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Http requests and data conversion", "Measure Time in Runtime", "Create jar files with compiler"]
+        }
+      },
+      "language" : ["Java"],
+      "tag" : ["Compile", "Online"],
+      "target" : ["Windows"],
+      "url" : "https://github.com/1408bg/TypingPractice"
     }
   ]
 }
