@@ -60,16 +60,20 @@
         "explain" : "Popcat의 클릭 수를 재화로 하여 여러 요소를 변경할 수 있도록 한다.",
         "caption" : {
           "title" : "성장한 것",
-          "article" : ["java, xml 레이아웃을 통한 apk 빌드", "익명 함수(람다식) 활용", "안드로이드 엑티비티의 생명주기 이해"]
+          "article" : ["java, xml 레이아웃을 통한 apk 빌드", "익명 함수(람다식) 활용", "안드로이드 엑티비티의 생명주기 이해", "기기 내부 저장소를 통한 앱 상태 저장 (SharedPreference)"]
         }
       },
       "en" : {
         "explain" : "Change several elements by using the number of clicks in Popcat as currency.",
         "caption" : {
           "title" : "Grown up"
-          "article" : ["build an apk through java, xml layout", "Utilize anonymous functions (Lambda)", "Understanding the Life Cycle of Android Activity"]
+          "article" : ["build an apk through java, xml layout", "Utilize anonymous functions (Lambda)", "Understanding the Life Cycle of Android Activity", "Save App State via Device Internal Storage (SharedPreference)"]
         }
-      }
+      },
+      "language" : ["Java"],
+      "tag" : ["Major experience", "Basic", "Local", "App"],
+      "target" : ["Android"],
+      "url" : "https://github.com/1408bg/Popcat"
     }
   ]
 }
