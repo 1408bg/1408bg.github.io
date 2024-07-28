@@ -35,10 +35,39 @@
       "name" : "ScheduleViewer",
       "date" : "2024/03/10",
       "ko" : {
-        "explain" : "본교 학생을 대상으로 한 각 학년, 반에 대한 당일 시간표와 다음 교시를 추적하여 제공합니다.",
+        "explain" : "본교 학생을 대상으로 한 각 학년, 반에 대한 당일 시간표와 다음 교시를 추적하여 제공한다.",
         "caption" : {
           "title" : "성장한 것",
-          "article" : [""]
+          "article" : ["time 모듈을 사용한 현재 시간 추적", "모듈화를 통한 데이터 관리", "협업 및 역할 분담 역량"]
+        }
+      },
+      "en" : {
+        "explain" : "Track and provide the same-day timetable for each grade and class for our students and the next class.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Tracking the current time using the time module", "Modular Data Management", "Collaboration and role-sharing capabilities"]
+        }
+      },
+      "language" : ["Python"],
+      "tag" : ["Toy", "Basic", "Local", "Team"],
+      "target" : ["Console"],
+      "url" : "https://github.com/1408bg/ScheduleViewer"
+    },
+    {
+      "name" : "Popcat",
+      "date" : "2024/03/19"
+      "ko" : {
+        "explain" : "Popcat의 클릭 수를 재화로 하여 여러 요소를 변경할 수 있도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["java, xml 레이아웃을 통한 apk 빌드", "익명 함수(람다식) 활용", "안드로이드 엑티비티의 생명주기 이해"]
+        }
+      },
+      "en" : {
+        "explain" : "Change several elements by using the number of clicks in Popcat as currency.",
+        "caption" : {
+          "title" : "Grown up"
+          "article" : ["build an apk through java, xml layout", "Utilize anonymous functions (Lambda)", "Understanding the Life Cycle of Android Activity"]
         }
       }
     }
