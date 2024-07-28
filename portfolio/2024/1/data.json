@@ -159,7 +159,7 @@
         }
       },
       "language" : ["HTML", "CSS", "Javascript"],
-      "tag" : ["Team", "Online", "Follower"],
+      "tag" : ["Team Project", "Online", "Follower"],
       "target" : ["Web"],
       "url" : "https://github.com/hy2n/daejeonsi"
     },
@@ -226,7 +226,7 @@
       },
       "language" : ["Dart"],
       "tag" : ["Flutter", "Online", "App"],
-      "target" : ["Android"],
+      "target" : ["Android", "Windows"],
       "url" : "https://github.com/1408bg/player"
     },
     {
@@ -270,7 +270,7 @@
       },
       "language" : ["C"],
       "tag" : ["Project", "Toy", "Clone Coding"],
-      "target" : ["Tool/lib"],
+      "target" : ["Windows"],
       "url" : "https://github.com/1408bg/C_Express"
     }
   ]
