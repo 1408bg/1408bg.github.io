@@ -66,7 +66,7 @@
       "en" : {
         "explain" : "Change several elements by using the number of clicks in Popcat as currency.",
         "caption" : {
-          "title" : "Grown up"
+          "title" : "Grown up",
           "article" : ["build an apk through java, xml layout", "Utilize anonymous functions (Lambda)", "Understanding the Life Cycle of Android Activity", "Save App State via Device Internal Storage (SharedPreference)"]
         }
       },
