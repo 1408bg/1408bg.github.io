@@ -1,4 +1,4 @@
-import { Card } from "/component/card.js";
+import { Card } from "/portfolio/current/component/card.js";
 
 export const Main = async (lang, source) => {
   const result = document.createElement("main");
