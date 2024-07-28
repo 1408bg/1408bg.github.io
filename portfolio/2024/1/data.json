@@ -164,26 +164,48 @@
       "url" : "https://github.com/hy2n/daejeonsi"
     },
     {
-      "name" : "DSM_Chat",
+      "name" : "DSM Chat",
       "date" : "2024/04/25",
       "ko" : {
         "explain" : "ip를 기준으로 사용자를 식별하여, 실시간 채팅을 할 수 있도록 한다.",
         "caption" : {
           "title" : "성장한 것",
-          "article" : ["소켓 개념 이해 및 활용 경험", "js를 통한 간단한 풀스택 웹 페이지 기획, 개발 능력", "통신 데이터 구조 사용자 정의 경험"]
+          "article" : ["소켓 개념 이해 및 활용 경험", "JS를 통한 간단한 풀스택 웹 페이지 기획, 개발 능력", "통신 데이터 구조 사용자 정의 경험"]
         }
       },
       "en" : {
         "explain" : "Identify users based on their ip, so that they can have real-time chat.",
         "caption" : {
           "title" : "Grown up",
-          "article" : ["Socket Concept Understanding and Utilization Experience", "Planning and developing simple full stack web pages with js", "Communication Data Structure Customization Experience"]
+          "article" : ["Socket Concept Understanding and Utilization Experience", "Planning and developing simple full stack web pages with JS", "Communication Data Structure Customization Experience"]
         }
       },
       "language" : ["HTML", "CSS", "Javascript"],
       "tag" : ["Socket", "Node", "Online"],
       "target" : ["Web", "API"],
       "url" : "https://github.com/1408bg/DSM_Chat"
+    },
+    {
+      "name" : "DSM Chat [App]",
+      "date" : "2024/04/28",
+      "ko" : {
+        "explain" : "DSM_Chat API를 사용하여 어플리케이션 구현을 통한 사용이 가능하도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["API 연동", "소켓 클라이언트 활용 경험", "http 통신 활용 능력"]
+        }
+      },
+      "en" : {
+        "explain" : "Use DSM_Chat API to enable use through application implementation.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["API Interworking", "Socket Client Utilization Experience", "Ability to utilize http communication"]
+        }
+      },
+      "language" : ["Dart"],
+      "tag" : ["Flutter", "Socket", "Online", "App"],
+      "target" : ["Android"],
+      "url" : "https://github.com/1408bg/DSM_Chat_App"
     }
   ]
 }
