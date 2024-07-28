@@ -140,6 +140,50 @@
       "tag" : ["Compile", "Online"],
       "target" : ["Windows"],
       "url" : "https://github.com/1408bg/TypingPractice"
+    },
+    {
+      "name" : "daejeonsi [FE]",
+      "date" : "2024/04/16",
+      "ko" : {
+        "explain" : "로그인/회원가입 페이지를 구성하고, 제공받은 현재 시간표와 유저 정보를 사용자에게 표시한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["협업 능력 및 기본적인 파일구조 이해", "로그인/회원가입 페이지의 기본 구성", "웹 페이지 개발 주도 경험"]
+        }
+      },
+      "en" : {
+        "explain" : "A login/membership page is formed, and the provided current timetable and user information are displayed to the user.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Understand collaboration capabilities and basic file structure", "Basic configuration of the login/membership page", "Web page development-driven experience"]
+        }
+      },
+      "language" : ["HTML", "CSS", "Javascript"],
+      "tag" : ["Team", "Online", "Follower"],
+      "target" : ["Web"]
+      "url" : "https://github.com/hy2n/daejeonsi"
+    },
+    {
+      "name" : "DSM_Chat",
+      "date" : "2024/04/25",
+      "ko" : {
+        "explain" : "ip를 기준으로 사용자를 식별하여, 실시간 채팅을 할 수 있도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["소켓 개념 이해 및 활용 경험", "js를 통한 간단한 풀스택 웹 페이지 기획, 개발 능력", "통신 데이터 구조 사용자 정의 경험"]
+        }
+      },
+      "en" : {
+        "explain" : "Identify users based on their ip, so that they can have real-time chat.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Socket Concept Understanding and Utilization Experience", "Planning and developing simple full stack web pages with js", "Communication Data Structure Customization Experience"]
+        }
+      },
+      "language" : ["HTML", "CSS", "Javascript"],
+      "tag" : ["Socket", "Node", "Online"],
+      "target" : ["Web", "API"],
+      "url" : "https://github.com/1408bg/DSM_Chat"
     }
   ]
 }
