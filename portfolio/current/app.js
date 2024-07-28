@@ -1,10 +1,10 @@
-import { Layout } from "/layout.js";
-import { Header } from "/component/header.js";
-import { NavBar } from "/component/navbar.js";
-import { Main } from "/component/main.js";
-import { Footer } from "/component/footer.js";
+import { Layout } from "/portfolio/current/layout.js";
+import { Header } from "/portfolio/current/component/header.js";
+import { NavBar } from "/portfolio/current/component/navbar.js";
+import { Main } from "/portfolio/current/component/main.js";
+import { Footer } from "/portfolio/current/component/footer.js";
 
-const manifest = await fetch("./manifest.json").then(data=>data.json());
+const manifest = await fetch("/portfolio/current/manifest.json").then(data=>data.json());
 const root = document.getElementById("root");
 const layout = Layout(root);
 let source;
