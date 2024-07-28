@@ -206,6 +206,72 @@
       "tag" : ["Flutter", "Socket", "Online", "App"],
       "target" : ["Android"],
       "url" : "https://github.com/1408bg/DSM_Chat_App"
+    },
+    {
+      "name" : "player",
+      "date" : "2024/05/05",
+      "ko" : {
+        "explain" : "클라우드에 있는 데이터를 추출하여 그것을 바탕으로 음악 재생이 가능하도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["네트워크, 에셋 이미지 활용 경험", "패키지를 통한 음악 재생 경험", "json 데이터 활용 능력"]
+        }
+      },
+      "en" : {
+        "explain" : "Extract data from the cloud and enable music playback based on it.",
+        "caption" : {
+          "title": "Grown up",
+          "article" : ["Network, Asset Image Experience", "Experience playing music through a package", "Ability to leverage json data"]
+        }
+      },
+      "language" : ["Dart"],
+      "tag" : ["Flutter", "Online", "App"],
+      "target" : ["Android"],
+      "url" : "https://github.com/1408bg/player"
+    },
+    {
+      "name" : "DJS [App]",
+      "date" : "2024/05/07",
+      "ko" : {
+        "explain" : "DJS 페이지를 웹뷰를 통해 모바일에서 접근할 수 있도록 하고, FCM을 통하여 추가 기능을 제공한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["Webview 개념 이해 및 활용 경험", "Firebase FCM 설정 경험", "local notification 사용 경험"]
+        }
+      },
+      "en" : {
+        "explain" : "The DJS page can be accessed from mobile through web view, and additional functions are provided through FCM.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Understanding and Utilizing Webview Concepts", "Firebase FCM setup experience", "Experience using local notification"]
+        }
+      },
+      "language" : ["Dart"],
+      "tag" : ["Flutter", "Webview", "App"],
+      "target" : ["Android"],
+      "url" : "https://github.com/1408bg/DeaJunSiFront"
+    },
+    {
+      "name" : "C Express",
+      "date" : "2024/06/28",
+      "ko" : {
+        "explain" : "express.js를 C언어로 구현하여 헤더 파일을 통하여 유사한 문법을 사용할 수 있도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["express.js 프레임워크의 개념 이해", "http 1의 요청/응답 구조 이해", "C언어를 통한 tcp 서버 생성 경험"]
+        }
+      },
+      "en" : {
+        "explain" : "Express.js is implemented in C language so that similar grammar can be used through header files.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["Understanding the Concept of express.js Framework", "Understanding the Request/Response Structure of http 1", "Experience creating tcp servers via C language"]
+        }
+      },
+      "language" : ["C"],
+      "tag" : ["Project", "Toy", "Clone Coding"],
+      "target" : ["Tool/lib"],
+      "url" : "https://github.com/1408bg/C_Express"
     }
   ]
 }
