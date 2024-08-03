@@ -186,7 +186,7 @@
       "url" : "https://github.com/1408bg/DSM_Chat"
     },
     {
-      "name" : "DSM Chat [App]",
+      "name" : "DSM Chat [APP]",
       "date" : "2024/04/28",
       "ko" : {
         "explain" : "DSM_Chat API를 사용하여 어플리케이션 구현을 통한 사용이 가능하도록 한다.",
@@ -272,6 +272,28 @@
       "tag" : ["Project", "Toy", "Clone Coding"],
       "target" : ["Windows"],
       "url" : "https://github.com/1408bg/C_Express"
+    },
+    {
+      "name" : "Economy Tracker [APP]",
+      "date" : "2024/07/18",
+      "ko" : {
+        "explain" : "뉴스를 카테고리별로 분류하고 그것을 분석한 통계를 볼 수 있도록 한다.",
+        "caption" : {
+          "title" : "성장한 것",
+          "article" : ["API 연동", "파일 구조 이해", "상태관리 활용", "모듈화", "퍼블리싱"]
+        }
+      },
+      "en" : {
+        "explain" : "It allows you to categorize news by category and view statistics that analyze it.",
+        "caption" : {
+          "title" : "Grown up",
+          "article" : ["API Interworking", "Understanding Project File Structure", "Utilize State management", "Modularization", "Publishing"]
+        }
+      },
+      "language" : ["Dart"],
+      "tag" : ["Hackathon", "Flutter", "Publishing"],
+      "target" : ["Android"],
+      "url" : "https://github.com/economy-tracker/application_frontend"
     }
   ]
 }
