@@ -1,6 +1,6 @@
 import Game from '../game.mjs';
 import { Color, Size, Position, animate } from '../graphic/data.mjs';
-import { Entity, Prefab } from '../entity/data.mjs';
+import { Entity, Prefab, Clickable } from '../entity/data.mjs';
 import { Lerp, Duration } from '../util/data.mjs';
 import { Text } from '../ui/data.mjs';
 
@@ -24,20 +24,24 @@ const end = () => {
   }
 }
 
+const jumpBird = () => {
+  if (stopf) {
+    stopf();
+  }
+  isFlying = true;
+  stopf = animate(
+    0,
+    -3,
+    Lerp.easeInSine,
+    new Duration({milisecond: 100}),
+    (value)=>weight = value,
+    ()=>setTimeout(()=>isFlying = false, 250)
+  );
+}
+
 game.setKeyboardEventListener((type, event) => {
   if (type == 'keydown' && event.key === ' ' && !isFlying) {
-    if (stopf) {
-      stopf();
-    }
-    isFlying = true;
-    stopf = animate(
-      0,
-      -3,
-      Lerp.easeInSine,
-      new Duration({milisecond: 100}),
-      (value)=>weight = value,
-      ()=>setTimeout(()=>isFlying = false, 250)
-    );
+    jumpBird();
   }
 });
 
@@ -91,8 +95,20 @@ const scoreText = new Text(
   "bold"
 );
 
+const jump = new Clickable(
+  new Position(game.width/2-30, game.height-90),
+  new Size(60, 60),
+  Color.fromHex('#00FF00'),
+  () => {
+    if (!isFlying) {
+      jumpBird();
+    }
+  }
+);
+
 game.addEntity(bird);
 game.addEntity(scoreText);
+game.addEntity(jump);
 
 setInterval(()=>{
   pipes.push(pipePrefab.instantiate(
