@@ -1,3 +1,9 @@
+import Game from '../game.mjs';
+import { Color, Size, Position, animate } from '../graphic/data.mjs';
+import { Entity, Prefab } from '../entity/data.mjs';
+import { Lerp, Duration } from '../util/data.mjs';
+import { Text } from '../ui/data.mjs';
+
 const root = document.querySelector('#game');
 const game = new Game(root);
 
@@ -7,11 +13,15 @@ game.setBackground(Color.fromHex('#87CEEB'));
 
 let stopf = false;
 let isFlying = false;
+let isEnd = false;
 let weight = 0;
 let score = 0;
 
 const end = () => {
-  window.location.reload();
+  if (!isEnd) {
+    window.location.reload();
+    isEnd = true;
+  }
 }
 
 game.setKeyboardEventListener((type, event) => {
