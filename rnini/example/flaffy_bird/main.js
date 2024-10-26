@@ -1,9 +1,3 @@
-import Game from '../game.mjs';
-import { Color, Size, Position, animate } from '../graphic/data.mjs';
-import { Entity, Prefab, Clickable } from '../entity/data.mjs';
-import { Lerp, Duration } from '../util/data.mjs';
-import { Text } from '../ui/data.mjs';
-
 const root = document.querySelector('#game');
 const game = new Game(root);
 
