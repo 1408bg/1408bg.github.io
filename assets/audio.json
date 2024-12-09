@@ -1,6 +1,6 @@
 {
   "ver" : "0.3",
-  "titles" : ["Default", "Classic"],
+  "titles" : ["Default", "Classic", "Labor Groove"],
   "Default" : {
     "min" : "1",
     "max" : "1",
