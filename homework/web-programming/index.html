@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>주제 발표 - 예외처리</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <span>&nbsp;&nbsp;예외 및 예외 처리&nbsp;&nbsp;</span>
+    <article></article>
+  </header>
+  <main>
+    <section>
+      <h1>예외</h1>
+      <p>
+        프로그램에서는 실행 중에 예기치 않은 문제가 발생할 수 있으며, 이를 예외(Exception)라고 한다.<br/>
+        Javascript에서는 Error 객체로 예외를 표현한다.
+      </p>
+      <h2>예외 객체</h2>
+      <p>
+        Javascript의 예외 객체는 name과 message, stack 속성을 가지며, 각각 예외의 이름, 설명, 호출 스택을 의미한다.
+      </p>
+      <h2>일반적인 예외 발생</h2>
+      <p>
+        Javascript가 브라우저에 의해 parsing될 때 발생하는 SyntaxError와 실행 도중 발생하는 Runtime Error가 있다.
+      </p>
+      <h2>강제적인 예외 발생</h2>
+      <p>
+        throw 문법을 사용하면 Runtime Error를 강제로 발생시킬 수 있으며, 일반적으로 Error 객체를 사용한다.
+      </p>
+    </section>
+    <section>
+      <h1>예외 처리</h1>
+      <h2>값을 검증하여 의도대로 동작하도록 하기</h2>
+      <pre>
+        <code class="language-javascript">
+          const value = prompt("정수를 입력하세요");
+          const parsedValue = parseInt(value);
+          if (isNaN(parsedValue)) {
+            console.log("정수가 입력되지 않음");
+          } else {
+            console.log(`입력된 수: ${parsedValue}`);
+          }
+        </code>
+      </pre>
+      <h2>try - catch 구문을 이용하여 의도대로 동작하도록 하기</h2>
+      <pre>
+        <code class="language-javascript">
+          function riskyOperation() {
+            if (!window.module) {
+              throw new Error("module이 포함되지 않음");
+            }
+          }
+          try {
+            riskyOperation();
+          } catch (error) {
+            console.log("예외 발생:", error.message);
+          }
+        </code>
+      </pre>
+      <h2>finally 블록을 활용하기</h2>
+      <pre>
+        <code class="language-javascript">
+          class Stream {
+            constructor() {
+              this.isOpen = false;
+            }
+            read() {
+              this.isOpen = true;
+              throw new Error('읽기 실패');
+            }
+            close() {
+              this.isOpen = false;
+            }
+          }
+          const stream = new Stream();
+          try {
+            stream.read();
+          } catch (error) {
+            console.log("예외 발생:", error.message);
+          } finally {
+            stream.close();
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h1>비동기 코드에서의 예외 처리</h1>
+      <h2>setTimeout에서의 예외 처리</h2>
+      <pre>
+        <code class="language-javascript">
+          setTimeout(() => {
+            try {
+              throw new Error("setTimeout 예외 발생!");
+            } catch (error) {
+              console.log("예외 처리됨:", error.message);
+            }
+          }, 1000);
+        </code>
+      </pre>
+      <h2>Promise에서의 예외 처리</h2>
+      <pre>
+        <code class="language-javascript">
+          new Promise((resolve, reject) => {
+            throw new Error("Promise 내부 예외 발생!");
+          })
+          .catch(error => {
+            console.log("예외 처리됨:", error.message);
+          });
+        </code>
+      </pre>
+      <h2>async/await에서의 예외 처리</h2>
+      <pre>
+        <code class="language-javascript">
+          async function riskyOperation() {
+            throw new Error("async 함수 내부 예외 발생!");
+          }
+          async function run() {
+            try {
+              await riskyOperation();
+            } catch (error) {
+              console.log("예외 처리됨:", error.message);
+            }
+          }
+          run();
+        </code>
+      </pre>
+    </section>
+  </main>
+  <footer>
+    좌클릭을 통해 코드블럭을 직접 실행할 수 있습니다.<br/>
+    헤더를 클릭하거나 ESC 키를 통해 축소할 수 있습니다.<br/>
+    화면 문제로 인해 코드를 제대로 확인할 수 없다면 <a href="content.md">마크다운</a>으로 확인하세요.
+  </footer>
+</body>
+</html>
