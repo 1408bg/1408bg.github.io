@@ -4,7 +4,7 @@ Javascript에서는 Error 객체로 예외를 표현한다.
 
 ## 예외 객체
 대부분의 언어는 Exception 객체로 예외를 표현하지만, Javascript의 경우에는 Error 객체로 예외를 표현한다.
-예외 객체는 name과 message, stack 속성을 가지며, 각각 예외의 이름, 설명, 호출 스택을 의미한다.
+예외 객체는 name과 message, stack 속성을 가지며, 각각 예외의 이름, 설명, 호출 스택(stacktrace)을 의미한다.
 Javascript에서 Error 객체가 생성되는 것은 보통 예외 발생을 의미하며, 이를 통해 디버깅이 가능하다.
 
 ## 일반적인 예외 발생
