@@ -36,6 +36,11 @@
     </section>
     <section>
       <h1>예외 처리</h1>
+      <p>
+        JavaScript의 비동기 함수에서는 예외가 즉시 catch되지 않고 콜백 함수나 Promise 체인 내에서 따로 처리해야 한다.
+        try - catch 구문은 실행 즉시 발생하는 예외를 처리하기에, 비동기 함수에서 호출 이후 발생하는 예외는 잡지 않는 것이다.
+        setTimeout, Promise, async/await을 사용할 때에는 특히 올바르게 예외 처리를 할 필요가 있다.
+      </p>
       <h2>값을 검증하여 의도대로 동작하도록 하기</h2>
       <pre>
         <code class="language-javascript">
