@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜덤 이름 추첨기</title>
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --primary-hover: #4f46e5;
+      --secondary-color: #f1f5f9;
+      --text-color: #334155;
+      --danger-color: #ef4444;
+      --success-color: #10b981;
+      --border-radius: 8px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    input, select {
+      padding: 10px 12px;
+      border-radius: var(--border-radius);
+      border: 1px solid #cbd5e1;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 10px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    button.secondary {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    button.secondary:hover {
+      background-color: #e2e8f0;
+    }
+
+    .names-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .name-tag {
+      background-color: var(--secondary-color);
+      padding: 8px 12px;
+      border-radius: var(--border-radius);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .name-tag button {
+      background: none;
+      color: var(--danger-color);
+      padding: 0;
+      font-size: 18px;
+      margin-left: 5px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .name-tag button:hover {
+      background: none;
+      color: #dc2626;
+    }
+
+    #add-name {
+      width: 100px;
+    }
+
+    .result-container {
+      margin-top: 20px;
+    }
+
+    .result-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .result-item {
+      background-color: #e0e7ff;
+      border-left: 4px solid var(--primary-color);
+      padding: 10px;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 600px) {
+      .input-group {
+        flex-direction: column;
+      }
+      
+      .names-container, .result-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>랜덤 이름 추첨기</h1>
+    
+    <div class="card">
+      <div class="form-group">
+        <label for="new-name">이름 추가</label>
+        <div class="input-group">
+          <input type="text" id="new-name" placeholder="새 이름 입력">
+          <button id="add-name">추가</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="winner-count">추첨할 인원 수</label>
+        <input type="number" id="winner-count" min="1" value="1">
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="exclude-winners" checked>
+        <label for="exclude-winners">당첨된 인원 명단에서 제외하기</label>
+      </div>
+
+      <button id="draw-button">추첨하기</button>
+      <button id="reset-button" class="secondary" style="margin-left: 10px;">결과 초기화</button>
+    </div>
+
+    <div class="card">
+      <h2>참가자 명단</h2>
+      <div class="names-container" id="names-container"></div>
+    </div>
+
+    <div class="card result-container" id="result-container" style="display: none;">
+      <div class="result-heading">
+        <h2>추첨 결과</h2>
+        <span id="result-count"></span>
+      </div>
+      <div class="result-list" id="result-list"></div>
+    </div>
+  </div>
+
+  <div class="confetti-container" id="confetti-container"></div>
+
+  <script>
+    const initialNames = ['권세은', '박주원', '박지연', '이동현', '윤유섭', '김시우', '양병건', '권지성', '김조을', '허영재', '김다연', '정명우', '지도현', '하동건'];
+    let names = [...initialNames];
+    let winners = [];
+    let excludedNames = [];
+
+    const newNameInput = document.getElementById('new-name');
+    const addNameButton = document.getElementById('add-name');
+    const winnerCountInput = document.getElementById('winner-count');
+    const drawButton = document.getElementById('draw-button');
+    const resetButton = document.getElementById('reset-button');
+    const namesContainer = document.getElementById('names-container');
+    const confettiContainer = document.getElementById('confetti-container');
+    const resultContainer = document.getElementById('result-container');
+    const resultList = document.getElementById('result-list');
+    const resultCount = document.getElementById('result-count');
+    const excludeWinnersCheckbox = document.getElementById('exclude-winners');
+
+    function renderNames() {
+      namesContainer.innerHTML = '';
+      const availableNames = names.filter(name => !excludedNames.includes(name));
+      
+      names.forEach(name => {
+        const nameTag = document.createElement('div');
+        nameTag.className = 'name-tag';
+        
+        if (excludedNames.includes(name)) {
+          nameTag.style.opacity = '0.5';
+          nameTag.style.backgroundColor = '#e5e7eb';
+        }
+        
+        nameTag.innerHTML = `
+          <span>${name}</span>
+          <button class="delete-btn" data-name="${name}">×</button>
+        `;
+        namesContainer.appendChild(nameTag);
+      });
+
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const nameToDelete = this.getAttribute('data-name');
+          names = names.filter(name => name !== nameToDelete);
+          excludedNames = excludedNames.filter(name => name !== nameToDelete);
+          renderNames();
+        });
+      });
+      
+      updateWinnerCountMax(availableNames.length);
+    }
+
+    function updateWinnerCountMax(max) {
+      winnerCountInput.max = max;
+      if (parseInt(winnerCountInput.value) > max) {
+        winnerCountInput.value = max;
+      }
+    }
+
+    function addName() {
+      const newName = newNameInput.value.trim();
+      if (newName && !names.includes(newName)) {
+        names.push(newName);
+        renderNames();
+        newNameInput.value = '';
+      } else if (names.includes(newName)) {
+        alert('이미 존재하는 이름입니다.');
+      }
+    }
+
+    function drawWinners() {
+      const count = parseInt(winnerCountInput.value);
+      const availableNames = names.filter(name => !excludedNames.includes(name));
+      
+      if (isNaN(count) || count < 1) {
+        alert('유효한 추첨 인원 수를 입력해주세요.');
+        return;
+      }
+      
+      if (count > availableNames.length) {
+        alert(`참가 가능한 인원(${availableNames.length}명)보다 많은 인원을 추첨할 수 없습니다.`);
+        return;
+      }
+
+      const shuffled = [...availableNames];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      winners = shuffled.slice(0, count);
+      
+      if (excludeWinnersCheckbox.checked) {
+        excludedNames = [...excludedNames, ...winners];
+        names = names.filter(name => !winners.includes(name));
+      }
+      
+      resultList.innerHTML = '';
+      winners.forEach(winner => {
+        const resultItem = document.createElement('div');
+        resultItem.className = 'result-item';
+        resultItem.textContent = winner;
+        resultList.appendChild(resultItem);
+      });
+      
+      resultCount.textContent = `총 ${winners.length}명`;
+      resultContainer.style.display = 'block';
+      
+      createConfetti();
+      renderNames();
+    }
+
+    function resetResults() {
+      winners = [];
+      resultContainer.style.display = 'none';
+      resultList.innerHTML = '';
+      names = [...initialNames];
+      renderNames();
+    }
+
+    function createConfetti() {
+      confettiContainer.innerHTML = '';
+      const colors = ['#f94144', '#f3722c', '#f8961e', '#f9c74f', '#90be6d', '#43aa8b', '#577590'];
+      
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        const size = Math.random() * 10 + 5;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        confetti.style.position = 'absolute';
+        confetti.style.width = `${size}px`;
+        confetti.style.height = `${size}px`;
+        confetti.style.backgroundColor = color;
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.top = '-20px';
+        confetti.style.opacity = '1';
+        
+        confettiContainer.appendChild(confetti);
+        
+        const duration = Math.random() * 3 + 2;
+        const delay = Math.random() * 2;
+        
+        confetti.animate(
+          [
+            { transform: 'translate3d(0, 0, 0) rotate(0)', opacity: 1 },
+            { transform: `translate3d(${Math.random() * 300 - 150}px, ${window.innerHeight}px, 0) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+          ],
+          {
+            duration: duration * 1000,
+            delay: delay * 1000,
+            fill: 'forwards',
+            easing: 'cubic-bezier(0.25, 1, 0.5, 1)'
+          }
+        );
+        
+        setTimeout(() => confetti.remove(), (duration + delay) * 1000);
+      }
+    }
+
+    addNameButton.addEventListener('click', addName);
+    newNameInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') addName(); });
+    drawButton.addEventListener('click', drawWinners);
+    resetButton.addEventListener('click', () => {
+      resetResults();
+      if (confirm('추첨 결과와 제외 명단을 모두 초기화할까요?')) {
+        excludedNames = [];
+        renderNames();
+      }
+    });
+    excludeWinnersCheckbox.addEventListener('change', renderNames);
+
+    renderNames();
+  </script>
+</body>
+</html>
