@@ -766,8 +766,9 @@ display는 width, height변경이 가능 input은 inline-block << 기본 inline�
 - readonly 읽기만 하는거
 - required 필수작성
 # 4/8!
-``<textarea>`` 태그 여러줄 텍스트 입력 cols = 컬럼, 열 rows = 행 cols="40" -> 영어 기준, 한글은 20자 정도 가능 rows는 세로로
-``<select>`` 태그로 드롭다운 만들고 ``<option>`` 태그로 옵션 만들기
+`<textarea>` 태그 여러줄 텍스트 입력 cols = 컬럼, 열 rows = 행 cols="40" -> 영어 기준, 한글은 20자 정도 가능 rows는 세로로
+`<select>` 태그로 드롭다운 만들고 `<option>` 태그로 옵션 만들기
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
