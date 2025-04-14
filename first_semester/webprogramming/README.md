@@ -135,7 +135,7 @@ HTML, CSS JS -> React.js Python Java -> Spring Framework Node.js
 
 ### HTML파일 생성
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -166,9 +166,8 @@ Open with Live server로 열었을 때 html, html과 link된 파일을 저장할
 
 라이브서버로 열면 나오는 주소
 
-```
-<http://127.0.0.1:5500/파일명.html>
-```
+
+`http://127.0.0.1:5500/파일명.html`
 
 기본은 127.0.0.1 5500은 port 주소
 
@@ -178,7 +177,7 @@ Open with Live server로 열었을 때 html, html과 link된 파일을 저장할
 
 ! + Tab으로
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -196,7 +195,7 @@ Open with Live server로 열었을 때 html, html과 link된 파일을 저장할
 
 ## 하나하나해석해준다.
 
-```
+```html
 <!DOCTYPE html>
 문서 자료형을 html로 정의
 <html lang="ko">
@@ -229,13 +228,13 @@ Hypertext Markup Language의 약자 Hypertext : 문서를 서로 연결해 주�
 
 ## 태그의 구성
 
-```
+```html
 <여는태그>내용</닫는태그>
 ```
 
 해당 형태를 요소(Element)라고 한다.
 
-```
+```html
 <태그1><태그2>내용</태그2></태그1>
 ```
 
@@ -243,7 +242,7 @@ Hypertext Markup Language의 약자 Hypertext : 문서를 서로 연결해 주�
 
 실제 코드에서는
 
-```
+```html
 <태그1>
   <태그2>내용</태그2>
 </태그1>
@@ -255,11 +254,11 @@ Hypertext Markup Language의 약자 Hypertext : 문서를 서로 연결해 주�
 
 내용이 비어있기에 빈 태그라 불린다. 빈 태그는 닫는 태그가 없고 여는 태그만 있다.
 
-```
+```html
 <태그1> 또는 <태그2/>
 ```
 
-태그2는 원래의 형태였으나 html5로 올라오면서 태그1로 써도 인식한다.
+태그2가 원래의 형태였으나 html5로 올라오면서 태그1로 써도 인식한다.
 
 > 일반 태그와 빈태그를 바로 구분할 수 있어야한다.
 
@@ -267,7 +266,7 @@ Hypertext Markup Language의 약자 Hypertext : 문서를 서로 연결해 주�
 
 ## 속성
 
-```
+```html
 <태그1 속성1="값">내용</태그>
 ```
 
@@ -277,13 +276,13 @@ Hypertext Markup Language의 약자 Hypertext : 문서를 서로 연결해 주�
 
 ## 이미지 사용
 
-```
+```html
 <img/>
 ```
 
 > 저렇게 쓰면 앞으로 저건 빈 태그겠구나 생각해라.
 
-```
+```html
 <img src="cat.jpg" alt="고양이">
 ```
 
@@ -293,7 +292,7 @@ Hypertext Markup Language의 약자 Hypertext : 문서를 서로 연결해 주�
 
 meta 태그로 여러 정보를 저장 할 수 있다.
 
-```
+```html
 <!DOCTYPE html>
 ```
 
@@ -303,11 +302,11 @@ meta 태그로 여러 정보를 저장 할 수 있다.
 
 그냥 div로 해도 웹에서는 똑같이 표시되지만 다른 개발자가 보기 좋으라고 쓴다.
 
-```
+```html
 <div id="header"></div>
 ```
 
-```
+```html
 <header></header>
 ```
 
@@ -315,7 +314,7 @@ meta 태그로 여러 정보를 저장 할 수 있다.
 
 ### 시멘틱 태그의 종류
 
-```
+```html
 <header></header>
 <nav></nav>
 <main></main>
@@ -323,7 +322,7 @@ meta 태그로 여러 정보를 저장 할 수 있다.
 
 메인은 한번만 사용 가능하다.
 
-```
+```html
 <article></article>
 <section></section>
 ```
@@ -352,7 +351,7 @@ meta 태그로 여러 정보를 저장 할 수 있다.
 
 ## 입력
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -396,7 +395,7 @@ meta 태그로 여러 정보를 저장 할 수 있다.
 
 ## 입력
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
